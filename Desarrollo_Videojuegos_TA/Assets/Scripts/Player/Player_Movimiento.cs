@@ -5,7 +5,6 @@ public class Player_Movimiento : MonoBehaviour
 {
     public float jumpForce = 5f;
     private bool isGrounded;
-    [SerializeField] private GameObject point;
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Ground"))
