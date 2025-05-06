@@ -1,3 +1,4 @@
+using System;
 using System.Drawing;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ public class Player_Movimiento : MonoBehaviour
     public float jumpForce = 5f;
     private bool isGrounded;
     [SerializeField] private GameObject point;
+
+    [SerializeField] private Rigidbody2D rb;
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Ground"))
@@ -20,6 +23,12 @@ public class Player_Movimiento : MonoBehaviour
             isGrounded = false;
         }
     }
+
+    private void Awake()
+    {
+        
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
@@ -31,31 +40,18 @@ public class Player_Movimiento : MonoBehaviour
 
     private void PointMove()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            point.transform.position = new Vector2(0, 0.1f) + point.transform.position;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            point.transform.position.y += -0.1f;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            point.transform.position = new Vector2(0.1f, 0) + point.transform.position;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            point.transform.position = new Vector2(-0.1f, 0) + point.transform.position;
-        }
-
         CubeMove();
     }
 
     private void CubeMove()
     {
-        if (TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
+        if (Input.GetKey(KeyCode.D))
         {
-            rb.linearVelocity = (point.transform.position - transform.position) * 1.5f;
+            rb.linearVelocity = new Vector2(1.5f,rb.linearVelocity.y);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            rb.linearVelocity =  new Vector2(-1.5f,rb.linearVelocity.y);
         }
     }
 }
