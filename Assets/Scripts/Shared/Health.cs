@@ -1,57 +1,40 @@
 using UnityEngine;
-using UnityEngine.Events;
-
 public class Health : MonoBehaviour
 {
-    [Header("Configuración de Salud")]
-    [SerializeField] private int maxHealth = 3;
-    private int currentHealth;
+    public int currentHealth = 10;
+    private Animator animator;
 
-    [Header("Eventos")]
-    public UnityEvent<int> onDamage; // Enviar daño recibido
-    public UnityEvent<int> onHeal;   // Enviar cantidad curada
-    public UnityEvent onDeath;
-
-    public bool IsDead => currentHealth <= 0;
-
-    void Awake()
+    private void Awake()
     {
-        currentHealth = maxHealth;
+        animator = GetComponentInChildren<Animator>();
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(int amount, Vector2 knockback)
     {
-        if (IsDead || amount <= 0) return;
+        currentHealth -= amount;
+        Debug.Log($"{gameObject.name} took {amount} damage!");
 
-        currentHealth = Mathf.Max(currentHealth - amount, 0);
-        onDamage?.Invoke(amount);
+        animator?.SetTrigger("Hurt");
 
-        if (IsDead)
+        // Apply knockback if needed
+        if (knockback != Vector2.zero)
+        {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.AddForce(knockback, ForceMode2D.Impulse);
+            }
+        }
+
+        if (currentHealth <= 0)
         {
             Die();
         }
     }
 
-    public void Heal(int amount)
-    {
-        if (IsDead || amount <= 0) return;
-
-        int prevHealth = currentHealth;
-        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
-        int healedAmount = currentHealth - prevHealth;
-
-        if (healedAmount > 0)
-            onHeal?.Invoke(healedAmount);
-    }
-
     private void Die()
     {
-        onDeath?.Invoke();
-        // Puedes reemplazar esto por una animación o lógica de respawn
-        gameObject.SetActive(false);
+        Debug.Log($"{gameObject.name} died.");
+        // TODO: death animation, disable controls, etc.
     }
-
-    public int GetCurrentHealth() => currentHealth;
-    public int GetMaxHealth() => maxHealth;
-    public float GetHealthPercentage() => (float)currentHealth / maxHealth;
 }
