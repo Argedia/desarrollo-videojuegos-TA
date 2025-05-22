@@ -1,28 +1,30 @@
 using UnityEngine;
-using UnityEngine.Events;
-
 public class Health : MonoBehaviour
 {
-    [Header("Health Settings")]
-    public int maxHealth = 3;
-    
-[SerializeField] private int currentHealth;
+    public int currentHealth = 10;
+    private Animator animator;
 
-    [Header("Events")]
-    public UnityEvent onDamage;
-    public UnityEvent onDeath;
-
-    void Awake()
+    private void Awake()
     {
-        currentHealth = maxHealth;
+        animator = GetComponentInChildren<Animator>();
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(int amount, Vector2 knockback)
     {
-        if (currentHealth <= 0) return;
-
         currentHealth -= amount;
-        onDamage?.Invoke();
+        Debug.Log($"{gameObject.name} took {amount} damage!");
+
+        animator?.SetTrigger("Hurt");
+
+        // Apply knockback if needed
+        if (knockback != Vector2.zero)
+        {
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.AddForce(knockback, ForceMode2D.Impulse);
+            }
+        }
 
         if (currentHealth <= 0)
         {
@@ -30,18 +32,9 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void Heal(int amount)
+    private void Die()
     {
-        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+        Debug.Log($"{gameObject.name} died.");
+        // TODO: death animation, disable controls, etc.
     }
-
-    public void Die()
-    {
-        onDeath?.Invoke();
-        // Aquí puedes desactivar, destruir o animar muerte
-        gameObject.SetActive(false); // temporal
-    }
-
-    public int GetCurrentHealth() => currentHealth;
-    public bool IsDead() => currentHealth <= 0;
 }
