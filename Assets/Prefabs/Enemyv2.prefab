@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4456518780955553481}
   - component: {fileID: 4556500173926450885}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemyv2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,8 @@ Transform:
   m_LocalPosition: {x: -7.46, y: -1.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7691015614550707289}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2255291836283571252
@@ -107,6 +108,11 @@ MonoBehaviour:
   direccion: {x: 1, y: 0}
   tiempoEntreMov: 2
   duracionMovimiento: 1
+  puntoDeVisionSuelo: {fileID: 0}
+  distanciaDeteccion: 1
+  capaSuelo:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &8133178398690172010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,3 +199,34 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.8959074, y: 1.8977966}
   m_EdgeRadius: 0
+--- !u!1 &4717298868743709429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7691015614550707289}
+  m_Layer: 0
+  m_Name: PuntoDeVisionSuelo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7691015614550707289
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4717298868743709429}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.022785576, z: -0, w: 0.9997404}
+  m_LocalPosition: {x: 0.49, y: -1.28, z: -0.04}
+  m_LocalScale: {x: 3.1533465, y: 0.60950696, z: 0.60950696}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3573948213566848111}
+  m_LocalEulerAnglesHint: {x: 0, y: 2.611, z: 0}
