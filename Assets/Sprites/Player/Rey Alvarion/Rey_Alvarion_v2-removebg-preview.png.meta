@@ -1,0 +1,478 @@
+fileFormatVersion: 2
+guid: 1b611e2c8a79c9d49a4ec054c5ce3d41
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5117280142471157418
+    second: Rey_Alvarion_v2-removebg-preview_0
+  - first:
+      213: 7004648240949138008
+    second: Rey_Alvarion_v2-removebg-preview_1
+  - first:
+      213: -3457549899778120598
+    second: Rey_Alvarion_v2-removebg-preview_2
+  - first:
+      213: -4455073418568908336
+    second: Rey_Alvarion_v2-removebg-preview_3
+  - first:
+      213: 3276028120375762850
+    second: Rey_Alvarion_v2-removebg-preview_4
+  - first:
+      213: -6237935089934512918
+    second: Rey_Alvarion_v2-removebg-preview_5
+  - first:
+      213: 7839628848754305119
+    second: Rey_Alvarion_v2-removebg-preview_6
+  - first:
+      213: 1878653216412868503
+    second: Rey_Alvarion_v2-removebg-preview_7
+  - first:
+      213: -2872829369811171569
+    second: Rey_Alvarion_v2-removebg-preview_8
+  - first:
+      213: -4884166658008449947
+    second: Rey_Alvarion_v2-removebg-preview_9
+  - first:
+      213: 8309806458281674484
+    second: Rey_Alvarion_v2-removebg-preview_10
+  - first:
+      213: -569747365282293359
+    second: Rey_Alvarion_v2-removebg-preview_11
+  - first:
+      213: -5770363234003672620
+    second: Rey_Alvarion_v2-removebg-preview_12
+  - first:
+      213: -858822735535730776
+    second: Rey_Alvarion_v2-removebg-preview_13
+  - first:
+      213: -4495331229529851464
+    second: Rey_Alvarion_v2-removebg-preview_14
+  - first:
+      213: -2058213254188312153
+    second: Rey_Alvarion_v2-removebg-preview_15
+  - first:
+      213: -6197296363766588929
+    second: Rey_Alvarion_v2-removebg-preview_16
+  - first:
+      213: 5226300926880028777
+    second: Rey_Alvarion_v2-removebg-preview_17
+  - first:
+      213: -3690978987587037041
+    second: Rey_Alvarion_v2-removebg-preview_18
+  - first:
+      213: 4105710877410420709
+    second: Rey_Alvarion_v2-removebg-preview_19
+  - first:
+      213: 1259526879324307886
+    second: Rey_Alvarion_v2-removebg-preview_20
+  - first:
+      213: -7410905696431177117
+    second: Rey_Alvarion_v2-removebg-preview_21
+  - first:
+      213: 72589622911123874
+    second: Rey_Alvarion_v2-removebg-preview_22
+  - first:
+      213: -4730844167378040015
+    second: Rey_Alvarion_v2-removebg-preview_23
+  - first:
+      213: 3421024829839714289
+    second: Rey_Alvarion_v2-removebg-preview_24
+  - first:
+      213: -2705238279332027683
+    second: Rey_Alvarion_v2-removebg-preview_25
+  - first:
+      213: 8854868341108346974
+    second: Rey_Alvarion_v2-removebg-preview_26
+  - first:
+      213: 2736841710651015178
+    second: Rey_Alvarion_v2-removebg-preview_27
+  - first:
+      213: -4211932952119764291
+    second: Rey_Alvarion_v2-removebg-preview_28
+  - first:
+      213: 7656955949733523424
+    second: Rey_Alvarion_v2-removebg-preview_29
+  - first:
+      213: -2452294619145145430
+    second: Rey_Alvarion_v2-removebg-preview_30
+  - first:
+      213: -3178825949930744534
+    second: Rey_Alvarion_v2-removebg-preview_31
+  - first:
+      213: -7553039379198611825
+    second: Rey_Alvarion_v2-removebg-preview_32
+  - first:
+      213: 4409643944357568463
+    second: Rey_Alvarion_v2-removebg-preview_33
+  - first:
+      213: -4480480873814337342
+    second: Rey_Alvarion_v2-removebg-preview_34
+  - first:
+      213: -8245571073220903315
+    second: Rey_Alvarion_v2-removebg-preview_35
+  - first:
+      213: -7442972603500229025
+    second: Rey_Alvarion_v2-removebg-preview_36
+  - first:
+      213: 8802448426260151492
+    second: Rey_Alvarion_v2-removebg-preview_37
+  - first:
+      213: 8217936888613015627
+    second: Rey_Alvarion_v2-removebg-preview_38
+  - first:
+      213: 2893249907798361633
+    second: Rey_Alvarion_v2-removebg-preview_39
+  - first:
+      213: 140232916538371364
+    second: Rey_Alvarion_v2-removebg-preview_40
+  - first:
+      213: 7828438542834321636
+    second: Rey_Alvarion_v2-removebg-preview_41
+  - first:
+      213: -3134879289282673677
+    second: Rey_Alvarion_v2-removebg-preview_42
+  - first:
+      213: 3365792898524765180
+    second: Rey_Alvarion_v2-removebg-preview_43
+  - first:
+      213: -4215887040749888391
+    second: Rey_Alvarion_v2-removebg-preview_44
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Rey_Alvarion_v2-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 338
+        width: 123
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 0, y: -83}
+        - {x: 61, y: 0}
+        - {x: 0, y: 83}
+        - {x: -61, y: 0}
+      physicsShape:
+      - - {x: 0, y: -83}
+        - {x: 61, y: 0}
+        - {x: 0, y: 83}
+        - {x: -61, y: 0}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9debe860601192348b49a0caf7222b40
+      internalID: 100811500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rey_Alvarion_v2-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 338
+        width: 123
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15ef60cb7a3f17449b91d11cb213405f
+      internalID: -58427237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rey_Alvarion_v2-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 338
+        width: 123
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f086e3f9b84aa1f41b341720437860ca
+      internalID: 2047327890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rey_Alvarion_v2-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 338
+        width: 123
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644a5ed00ec186942b02f2be4bc4fab6
+      internalID: 67173875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rey_Alvarion_v2-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 115
+        width: 123
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 833a6f8723c9ca64b8084f10d79784a9
+      internalID: 214245902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rey_Alvarion_v2-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 115
+        width: 123
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06746b727ed1fac4fb9f726884bd6a3f
+      internalID: -376580404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rey_Alvarion_v2-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 115
+        width: 123
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b74b636965fb0f848908e7f5fc05b138
+      internalID: 1700590180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rey_Alvarion_v2-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 115
+        width: 123
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c79e03b0da02d24fa5379a1ea15b05e
+      internalID: 1482472329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5f0fc7d6a141d6247b6a32ea60b865f4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Rey_Alvarion_v2-removebg-preview_0: 100811500
+      Rey_Alvarion_v2-removebg-preview_1: -58427237
+      Rey_Alvarion_v2-removebg-preview_10: -302168897
+      Rey_Alvarion_v2-removebg-preview_11: 433495176
+      Rey_Alvarion_v2-removebg-preview_12: 667707686
+      Rey_Alvarion_v2-removebg-preview_13: -369603846
+      Rey_Alvarion_v2-removebg-preview_14: 383872022
+      Rey_Alvarion_v2-removebg-preview_15: -603612121
+      Rey_Alvarion_v2-removebg-preview_16: 1547982889
+      Rey_Alvarion_v2-removebg-preview_17: 1794887827
+      Rey_Alvarion_v2-removebg-preview_18: -471527251
+      Rey_Alvarion_v2-removebg-preview_19: -66223619
+      Rey_Alvarion_v2-removebg-preview_2: 2047327890
+      Rey_Alvarion_v2-removebg-preview_20: 100078177
+      Rey_Alvarion_v2-removebg-preview_21: 1903061716
+      Rey_Alvarion_v2-removebg-preview_22: 747750459
+      Rey_Alvarion_v2-removebg-preview_23: -531969635
+      Rey_Alvarion_v2-removebg-preview_24: 1439718721
+      Rey_Alvarion_v2-removebg-preview_25: -2016748208
+      Rey_Alvarion_v2-removebg-preview_26: -1560144448
+      Rey_Alvarion_v2-removebg-preview_27: -970095047
+      Rey_Alvarion_v2-removebg-preview_28: -2009101084
+      Rey_Alvarion_v2-removebg-preview_29: -439978315
+      Rey_Alvarion_v2-removebg-preview_3: 67173875
+      Rey_Alvarion_v2-removebg-preview_30: 2103391051
+      Rey_Alvarion_v2-removebg-preview_31: -401057581
+      Rey_Alvarion_v2-removebg-preview_32: 495829761
+      Rey_Alvarion_v2-removebg-preview_33: -1519839673
+      Rey_Alvarion_v2-removebg-preview_34: -1550053858
+      Rey_Alvarion_v2-removebg-preview_35: -2027806994
+      Rey_Alvarion_v2-removebg-preview_36: -173866172
+      Rey_Alvarion_v2-removebg-preview_37: -231529514
+      Rey_Alvarion_v2-removebg-preview_38: -404896446
+      Rey_Alvarion_v2-removebg-preview_39: 1851815618
+      Rey_Alvarion_v2-removebg-preview_4: 214245902
+      Rey_Alvarion_v2-removebg-preview_40: 2081218135
+      Rey_Alvarion_v2-removebg-preview_41: 245281036
+      Rey_Alvarion_v2-removebg-preview_5: -376580404
+      Rey_Alvarion_v2-removebg-preview_6: 1700590180
+      Rey_Alvarion_v2-removebg-preview_7: 1482472329
+      Rey_Alvarion_v2-removebg-preview_8: 1740785129
+      Rey_Alvarion_v2-removebg-preview_9: 1399375036
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

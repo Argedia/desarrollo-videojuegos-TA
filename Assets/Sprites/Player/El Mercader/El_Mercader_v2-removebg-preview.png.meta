@@ -1,0 +1,325 @@
+fileFormatVersion: 2
+guid: 21f4e9db24ffac14284bea206024be78
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 381103786284524654
+    second: El_Mercader_v2-removebg-preview_0
+  - first:
+      213: 1700275664702363648
+    second: El_Mercader_v2-removebg-preview_1
+  - first:
+      213: 952270779917496495
+    second: El_Mercader_v2-removebg-preview_2
+  - first:
+      213: -6050419599920679264
+    second: El_Mercader_v2-removebg-preview_3
+  - first:
+      213: 4538517235393646350
+    second: El_Mercader_v2-removebg-preview_4
+  - first:
+      213: 3193714657845098609
+    second: El_Mercader_v2-removebg-preview_5
+  - first:
+      213: 6807523924780720600
+    second: El_Mercader_v2-removebg-preview_6
+  - first:
+      213: 7061058916688270155
+    second: El_Mercader_v2-removebg-preview_7
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: El_Mercader_v2-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 196
+        width: 148
+        height: 197
+      alignment: 9
+      pivot: {x: 0.5995671, y: 0.4074465}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e64ab0cdfd3f94500800000000000000
+      internalID: 381103786284524654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El_Mercader_v2-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 196
+        width: 148
+        height: 197
+      alignment: 9
+      pivot: {x: 0.52738094, y: 0.41833526}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa077fe9a35273d00800000000000000
+      internalID: 952270779917496495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El_Mercader_v2-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 196
+        width: 148
+        height: 197
+      alignment: 9
+      pivot: {x: 0.51203406, y: 0.40412152}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0f40a6216d0cfe30800000000000000
+      internalID: 4538517235393646350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El_Mercader_v2-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 196
+        width: 148
+        height: 197
+      alignment: 9
+      pivot: {x: 0.48949412, y: 0.43883362}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d1278811fe297e50800000000000000
+      internalID: 6807523924780720600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El_Mercader_v2-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 0
+        width: 148
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 832bb6488bd0c434c8269969967ac5cc
+      internalID: 1700275664702363648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El_Mercader_v2-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 0
+        width: 140
+        height: 197
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43727887}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed75d996a98e8a74989a5c55604f3435
+      internalID: -6050419599920679264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El_Mercader_v2-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 0
+        width: 148
+        height: 197
+      alignment: 9
+      pivot: {x: 0.5103539, y: 0.33488783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f9e337a032c3b4c8948f38ad6300c0
+      internalID: 3193714657845098609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El_Mercader_v2-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 0
+        width: 148
+        height: 197
+      alignment: 9
+      pivot: {x: 0.4274766, y: 0.37426624}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be46fa2bd09ccfd47b98409b1b6432eb
+      internalID: 7061058916688270155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c6aa6ae9f29fe334ab7d3c61f2c86a72
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      El_Mercader_v2-removebg-preview_0: 381103786284524654
+      El_Mercader_v2-removebg-preview_1: 1700275664702363648
+      El_Mercader_v2-removebg-preview_2: 952270779917496495
+      El_Mercader_v2-removebg-preview_3: -6050419599920679264
+      El_Mercader_v2-removebg-preview_4: 4538517235393646350
+      El_Mercader_v2-removebg-preview_5: 3193714657845098609
+      El_Mercader_v2-removebg-preview_6: 6807523924780720600
+      El_Mercader_v2-removebg-preview_7: 7061058916688270155
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
