@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6059980580887935445}
   - component: {fileID: 7790696908966771110}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SandCollider
   m_TagString: Ground
   m_Icon: {fileID: 0}
