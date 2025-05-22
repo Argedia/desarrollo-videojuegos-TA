@@ -6,13 +6,13 @@ public class MeleeAttack : MonoBehaviour
     public float attackDuration = 0.2f;
     private bool isAttacking = false;
     [SerializeField] private Animator animator;
-    
+
     void Awake()
     {
         if (animator == null)
             animator = GetComponentInChildren<Animator>();
     }
-    
+
     public void TryAttack()
     {
         if (!isAttacking)
@@ -28,4 +28,7 @@ public class MeleeAttack : MonoBehaviour
         hitbox.SetActive(false);
         isAttacking = false;
     }
+
+    public bool IsAttacking => isAttacking;
+
 }

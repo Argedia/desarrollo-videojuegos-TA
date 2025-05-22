@@ -75,4 +75,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 #Ignora la carpeta vscode de Ariel
-*.vscode
+*.vscode/
