@@ -3,14 +3,16 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    [Header("Health Settings")]
-    public int maxHealth = 3;
-    
-[SerializeField] private int currentHealth;
+    [Header("Configuración de Salud")]
+    [SerializeField] private int maxHealth = 3;
+    private int currentHealth;
 
-    [Header("Events")]
-    public UnityEvent onDamage;
+    [Header("Eventos")]
+    public UnityEvent<int> onDamage; // Enviar daño recibido
+    public UnityEvent<int> onHeal;   // Enviar cantidad curada
     public UnityEvent onDeath;
+
+    public bool IsDead => currentHealth <= 0;
 
     void Awake()
     {
@@ -19,12 +21,12 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        if (currentHealth <= 0) return;
+        if (IsDead || amount <= 0) return;
 
-        currentHealth -= amount;
-        onDamage?.Invoke();
+        currentHealth = Mathf.Max(currentHealth - amount, 0);
+        onDamage?.Invoke(amount);
 
-        if (currentHealth <= 0)
+        if (IsDead)
         {
             Die();
         }
@@ -32,16 +34,24 @@ public class Health : MonoBehaviour
 
     public void Heal(int amount)
     {
+        if (IsDead || amount <= 0) return;
+
+        int prevHealth = currentHealth;
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+        int healedAmount = currentHealth - prevHealth;
+
+        if (healedAmount > 0)
+            onHeal?.Invoke(healedAmount);
     }
 
-    public void Die()
+    private void Die()
     {
         onDeath?.Invoke();
-        // Aquí puedes desactivar, destruir o animar muerte
-        gameObject.SetActive(false); // temporal
+        // Puedes reemplazar esto por una animación o lógica de respawn
+        gameObject.SetActive(false);
     }
 
     public int GetCurrentHealth() => currentHealth;
-    public bool IsDead() => currentHealth <= 0;
+    public int GetMaxHealth() => maxHealth;
+    public float GetHealthPercentage() => (float)currentHealth / maxHealth;
 }
