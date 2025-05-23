@@ -1,40 +1,50 @@
 using UnityEngine;
+using System.Collections;
 public class Health : MonoBehaviour
 {
     public int currentHealth = 10;
-    private Animator animator;
+    private PlayerAnimatorController animController;
+    private bool isInvulnerable = false;
+
+    private PlayerMovement movement; // o EnemyMovement si reutilizas
 
     private void Awake()
     {
-        animator = GetComponentInChildren<Animator>();
+        animController = GetComponentInChildren<PlayerAnimatorController>();
+        movement = GetComponent<PlayerMovement>(); // Cambia por tu script de movimiento si no es PlayerMovement
     }
 
-    public void TakeDamage(int amount, Vector2 knockback)
+    public void TakeDamage(int amount, Vector2 sourcePosition)
     {
+        if (isInvulnerable) return;
+
+        Vector2 direction = ((Vector2)transform.position - sourcePosition).normalized;
+        Vector2 knockback = new Vector2(direction.x, 1f).normalized * 5f; // dirección + impulso vertical
+
         currentHealth -= amount;
-        Debug.Log($"{gameObject.name} took {amount} damage!");
-
-        animator?.SetTrigger("Hurt");
-
-        // Apply knockback if needed
-        if (knockback != Vector2.zero)
-        {
-            Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.AddForce(knockback, ForceMode2D.Impulse);
-            }
-        }
-
         if (currentHealth <= 0)
         {
-            Die();
+            StartCoroutine(Die());
+            return;
+        }
+        animController?.TriggerHit();
+
+        Debug.Log($"{gameObject.name} took {amount} damage!");
+
+        // Congela movimiento temporalmente
+        if (movement != null)
+        {
+            movement.ApplyKnockback(knockback);
         }
     }
 
-    private void Die()
+    private IEnumerator Die()
     {
+        movement.Freeze(-1);
+        animController?.TriggerDeath();
         Debug.Log($"{gameObject.name} died.");
-        // TODO: death animation, disable controls, etc.
-    }
+        //Destruye el objeto luego de morir
+        yield return new WaitForSeconds(10);
+        Destroy(gameObject, 1.5f);
+    } 
 }
