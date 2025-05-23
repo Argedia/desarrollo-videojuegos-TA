@@ -15,11 +15,11 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ground Check")]
     public LayerMask groundLayer;
 
-    private Rigidbody2D rb;
+    protected Rigidbody2D rb;
     private bool isGrounded = false;
 
     private float horizontalInput = 0f;
-    private bool isMovementPaused = false;
+    protected bool isMovementPaused = false;
 
     // Variables para salto variable
     private bool isJumping = false;
