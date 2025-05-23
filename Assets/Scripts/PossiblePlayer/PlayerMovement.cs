@@ -25,21 +25,29 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping = false;
     private float jumpHoldTimer = 0f;
     private bool jumpPressedLastFrame = false;
+    //Variables para knockback
+    private bool isKnockbackActive = false;
+    private Vector2 knockbackVelocity = Vector2.zero;
 
     private PlayerAnimatorController animController;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        animController = GetComponentInChildren<PlayerAnimatorController>(); 
+        animController = GetComponentInChildren<PlayerAnimatorController>();
     }
 
     private void FixedUpdate()
     {
+        if (isKnockbackActive)
+        {
+            rb.linearVelocity = knockbackVelocity;
+            return;
+        }
         HandleRunning();
         HandleJump();
 
         // Señales al animador
-        animController?.SetIsGrounded(isGrounded); 
+        animController?.SetIsGrounded(isGrounded);
         animController?.SetVerticalVelocity(rb.linearVelocityY);
         animController?.SetIsMoving(Mathf.Abs(horizontalInput) > 0.1f);
     }
@@ -85,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
         animController?.SetFacing(horizontalInput);
     }
 
-public void Jump(bool jumpPressed)
+    public void Jump(bool jumpPressed)
     {
         if (isMovementPaused) return;
         if (jumpPressed)
@@ -171,5 +179,20 @@ public void Jump(bool jumpPressed)
     public void FreeMove()
     {
         isMovementPaused = false;
+    }
+    
+    public void ApplyKnockback(Vector2 force, float duration = 0.2f)
+    {
+        knockbackVelocity = force;
+        isKnockbackActive = true;
+        Freeze(0.5f);
+        StartCoroutine(EndKnockbackAfterDelay(duration));
+    }
+
+    private IEnumerator EndKnockbackAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        isKnockbackActive = false;
+        knockbackVelocity = Vector2.zero;
     }
 }
