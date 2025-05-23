@@ -1,0 +1,272 @@
+fileFormatVersion: 2
+guid: d04baf81b3235b840920ea746f44400a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7367831363276611004
+    second: El_Archivero_v2-removebg-preview_0
+  - first:
+      213: 6520024953359937180
+    second: El_Archivero_v2-removebg-preview_1
+  - first:
+      213: -8091220207728565721
+    second: El_Archivero_v2-removebg-preview_2
+  - first:
+      213: -8575142256159783640
+    second: El_Archivero_v2-removebg-preview_3
+  - first:
+      213: 7210749625128211935
+    second: El_Archivero_v2-removebg-preview_4
+  - first:
+      213: -6613173735245561393
+    second: El_Archivero_v2-removebg-preview_5
+  - first:
+      213: 3066962623359782343
+    second: El_Archivero_v2-removebg-preview_6
+  - first:
+      213: -3239340070562445636
+    second: El_Archivero_v2-removebg-preview_7
+  - first:
+      213: -8766461571520357446
+    second: El_Archivero_v2-removebg-preview_8
+  - first:
+      213: -5317640232242642968
+    second: El_Archivero_v2-removebg-preview_9
+  - first:
+      213: -8795719135293602122
+    second: El_Archivero_v2-removebg-preview_10
+  - first:
+      213: 3362263922598647525
+    second: El_Archivero_v2-removebg-preview_11
+  - first:
+      213: 8338166719530993532
+    second: El_Archivero_v2-removebg-preview_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: El_Archivero_v2-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 298
+        width: 130
+        height: 170
+      alignment: 9
+      pivot: {x: 0.51691335, y: 0.39652836}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0128450987082bd458d32b6153da72d5
+      internalID: 1963656732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El_Archivero_v2-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 298
+        width: 130
+        height: 170
+      alignment: 9
+      pivot: {x: 0.47181055, y: 0.4223963}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b2586c680a57ec46a32709b19dd475e
+      internalID: -205874505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El_Archivero_v2-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 298
+        width: 130
+        height: 170
+      alignment: 9
+      pivot: {x: 0.5451029, y: 0.45257533}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7b13b9d257eddf4c8259c73946a9631
+      internalID: 665564619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El_Archivero_v2-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 33
+        width: 130
+        height: 170
+      alignment: 9
+      pivot: {x: 0.40415627, y: 0.3534153}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6948a5e2c2458e34ba07867821f7efe8
+      internalID: -2094617921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El_Archivero_v2-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 33
+        width: 130
+        height: 170
+      alignment: 9
+      pivot: {x: 0.46617267, y: 0.4353302}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c2b62cd5cc8deb40a13872f70829247
+      internalID: -1581952706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f02f442d24e45eb48a3b14b6db950b42
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      El_Archivero_v2-removebg-preview_0: 1963656732
+      El_Archivero_v2-removebg-preview_1: -205874505
+      El_Archivero_v2-removebg-preview_2: 665564619
+      El_Archivero_v2-removebg-preview_3: -2094617921
+      El_Archivero_v2-removebg-preview_4: -1581952706
+      El_Archivero_v2-removebg-preview_5: 348077313
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
