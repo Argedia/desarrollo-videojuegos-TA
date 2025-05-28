@@ -1,0 +1,458 @@
+fileFormatVersion: 2
+guid: f46a3540f8d4fd046b2178dac7d45c60
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1754993462529714736
+    second: El Mercader_v4_0
+  - first:
+      213: 8524833133820630541
+    second: El Mercader_v4_1
+  - first:
+      213: 683769067043608150
+    second: El Mercader_v4_2
+  - first:
+      213: 2015510550197638997
+    second: El Mercader_v4_3
+  - first:
+      213: 1210846857521531965
+    second: El Mercader_v4_4
+  - first:
+      213: 7601472683577517728
+    second: El Mercader_v4_5
+  - first:
+      213: -5013552240311311220
+    second: El Mercader_v4_6
+  - first:
+      213: -2132443793279708127
+    second: El Mercader_v4_7
+  - first:
+      213: -4933115493603041154
+    second: El Mercader_v4_8
+  - first:
+      213: 877790290501035003
+    second: El Mercader_v4_9
+  - first:
+      213: 4477493117255316628
+    second: El Mercader_v4_10
+  - first:
+      213: -3909007055040331157
+    second: El Mercader_v4_11
+  - first:
+      213: 2958341147816255122
+    second: El Mercader_v4_12
+  - first:
+      213: 2370864081898471153
+    second: El Mercader_v4_13
+  - first:
+      213: -3360051417865542076
+    second: El Mercader_v4_14
+  - first:
+      213: -5775616342253470141
+    second: El Mercader_v4_15
+  - first:
+      213: 3900296664815721248
+    second: El Mercader_v4_16
+  - first:
+      213: 1966882367868824277
+    second: El Mercader_v4_17
+  - first:
+      213: -6442833686119015876
+    second: El Mercader_v4_18
+  - first:
+      213: -1587561658270922268
+    second: El Mercader_v4_19
+  - first:
+      213: 5975039812366959509
+    second: El Mercader_v4_20
+  - first:
+      213: 1448745981029821298
+    second: El Mercader_v4_21
+  - first:
+      213: 3767540316281903086
+    second: El Mercader_v4_22
+  - first:
+      213: 6915431524891508174
+    second: El Mercader_v4_23
+  - first:
+      213: -4736212294219448961
+    second: El Mercader_v4_24
+  - first:
+      213: 550713269880737302
+    second: El Mercader_v4_25
+  - first:
+      213: -8606870407816784721
+    second: El Mercader_v4_26
+  - first:
+      213: -7924804423673324599
+    second: El Mercader_v4_27
+  - first:
+      213: -1572702824827265360
+    second: El Mercader_v4_28
+  - first:
+      213: 7702769734425313749
+    second: El Mercader_v4_29
+  - first:
+      213: -9217011340040369637
+    second: El Mercader_v4_30
+  - first:
+      213: 7831657351150805953
+    second: El Mercader_v4_31
+  - first:
+      213: -5855434801344027803
+    second: El Mercader_v4_32
+  - first:
+      213: -4970596174130420957
+    second: El Mercader_v4_33
+  - first:
+      213: 431867811614089843
+    second: El Mercader_v4_34
+  - first:
+      213: -8726267282400623320
+    second: El Mercader_v4_35
+  - first:
+      213: 8617676663561479826
+    second: El Mercader_v4_36
+  - first:
+      213: 449168108157501779
+    second: El Mercader_v4_37
+  - first:
+      213: -5487535510644228207
+    second: El Mercader_v4_38
+  - first:
+      213: -2913449416011584387
+    second: El Mercader_v4_39
+  - first:
+      213: 1575810234415134140
+    second: El Mercader_v4_40
+  - first:
+      213: -4938156241684593046
+    second: El Mercader_v4_41
+  - first:
+      213: 7118847334556092760
+    second: El Mercader_v4_42
+  - first:
+      213: -4316691151904879977
+    second: El Mercader_v4_43
+  - first:
+      213: 3601869263987248175
+    second: El Mercader_v4_44
+  - first:
+      213: -3201203338272803897
+    second: El Mercader_v4_45
+  - first:
+      213: -3470419494318872640
+    second: El Mercader_v4_46
+  - first:
+      213: 6048639568244108122
+    second: El Mercader_v4_47
+  - first:
+      213: -4366387446852763494
+    second: El Mercader_v4_48
+  - first:
+      213: -541214106187517032
+    second: El Mercader_v4_49
+  - first:
+      213: 1863749429017304400
+    second: El Mercader_v4_50
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: El Mercader_v4_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 730
+        width: 256
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fab3fc7a5c086c94cb55f783aff4947f
+      internalID: -1870991280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El Mercader_v4_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 730
+        width: 256
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1dc5ec2d065a5441b4c4adff3de408d
+      internalID: -1657787067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El Mercader_v4_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 730
+        width: 256
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aac0c86de52603f4387f30a240a65064
+      internalID: 574694535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El Mercader_v4_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 730
+        width: 256
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3d61ae8599ae6440b7673131578afea
+      internalID: -219651987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El Mercader_v4_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 366
+        width: 256
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55ec293464aa0cb449da1456c4210f3c
+      internalID: -1219570049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El Mercader_v4_5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 366
+        width: 256
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73eddb6e2ca131f48bdd058f022bd909
+      internalID: -1252656183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El Mercader_v4_6
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 366
+        width: 256
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f347524d4d4402438b3e9b463e28725
+      internalID: 789752491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: El Mercader_v4_7
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 366
+        width: 256
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d61b6c108f4f37b45ab12ee5feaa6d31
+      internalID: 472642519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: aae67bcb3aa00584f8879a12cd151d2f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      El Mercader_v4_0: -1870991280
+      El Mercader_v4_1: -1657787067
+      El Mercader_v4_10: -650229970
+      El Mercader_v4_11: -1564884020
+      El Mercader_v4_2: 574694535
+      El Mercader_v4_3: -219651987
+      El Mercader_v4_4: -1219570049
+      El Mercader_v4_5: -1252656183
+      El Mercader_v4_6: 789752491
+      El Mercader_v4_7: 472642519
+      El Mercader_v4_8: 1892495341
+      El Mercader_v4_9: -855966250
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
