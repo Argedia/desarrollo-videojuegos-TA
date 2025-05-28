@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DamageDealer : MonoBehaviour
+public class DamageDealerOld : MonoBehaviour
 {
     [Header("Damage Settings")]
     public int damageAmount = 1;
@@ -18,10 +18,11 @@ public class DamageDealer : MonoBehaviour
         if (((1 << other.gameObject.layer) & targetLayers) != 0)
         {
             // Try to get Health component on the other object
-            Health targetHealth = other.GetComponentInParent<Health>();
+            HealthOld targetHealth = other.GetComponentInParent<HealthOld>();
             if (targetHealth != null)
             {
-                targetHealth.TakeDamage(damageAmount, knockback);
+                Vector2 pos2D = new Vector2(transform.position.x, transform.position.y);
+                targetHealth.TakeDamage(damageAmount, pos2D);
 
                 // OPTIONAL: if you only want to hit once, disable
                 // isActive = false;
