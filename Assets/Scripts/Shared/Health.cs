@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-public class Health : MonoBehaviour
+public class HealthOld : MonoBehaviour
 {
     public int currentHealth = 10;
     private PlayerAnimatorController animController;
