@@ -1,0 +1,426 @@
+fileFormatVersion: 2
+guid: 84f7ffb00b66a8c4b9ceb432afe0fa7e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8928066375047756933
+    second: Pinchos_0
+  - first:
+      213: -6032614100653572155
+    second: Pinchos_1
+  - first:
+      213: 5808579853170650776
+    second: Pinchos_2
+  - first:
+      213: 3796442018181125754
+    second: Pinchos_3
+  - first:
+      213: -2624528984010188628
+    second: Pinchos_4
+  - first:
+      213: -3658337019507394577
+    second: Pinchos_5
+  - first:
+      213: -6449751733255578253
+    second: Pinchos_6
+  - first:
+      213: -4411432632796652046
+    second: Pinchos_7
+  - first:
+      213: -1780035381167785636
+    second: Pinchos_8
+  - first:
+      213: 340191309152511376
+    second: Pinchos_9
+  - first:
+      213: 5795929584888887399
+    second: Pinchos_10
+  - first:
+      213: -5415498665896591039
+    second: Pinchos_11
+  - first:
+      213: -6996926665400546295
+    second: Pinchos_12
+  - first:
+      213: -5954529838782228132
+    second: Pinchos_13
+  - first:
+      213: 4212005953572634159
+    second: Pinchos_14
+  - first:
+      213: -2305866509435394926
+    second: Pinchos_15
+  - first:
+      213: -7703730345696240304
+    second: Pinchos_16
+  - first:
+      213: 4188062516766067928
+    second: Pinchos_17
+  - first:
+      213: 3492483135398538968
+    second: Pinchos_18
+  - first:
+      213: -3429303194685934718
+    second: Pinchos_19
+  - first:
+      213: 2129773323655448012
+    second: Pinchos_20
+  - first:
+      213: 8202398112142154730
+    second: Pinchos_21
+  - first:
+      213: 4999644530403417140
+    second: Pinchos_22
+  - first:
+      213: 7647039584946461620
+    second: Pinchos_23
+  - first:
+      213: -2676154415263857296
+    second: Pinchos_24
+  - first:
+      213: 140388462759629075
+    second: Pinchos_25
+  - first:
+      213: -4736002066327513513
+    second: Pinchos_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pinchos_5
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 240
+        width: 114
+        height: 489
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe7b99b0dd9fa3dc0800000000000000
+      internalID: -3658337019507394577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pinchos_6
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 240
+        width: 114
+        height: 489
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37d57d988f0ed76a0800000000000000
+      internalID: -6449751733255578253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pinchos_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 240
+        width: 114
+        height: 489
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc9263ec9faff694dabaa9494b3b98a7
+      internalID: 714541345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pinchos_1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 240
+        width: 114
+        height: 489
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e08d7fb4ebaf24793ec11372fd8242
+      internalID: -2113882088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pinchos_2
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 239
+        width: 114
+        height: 489
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6933a81682b027e439c07e18df1dba9e
+      internalID: -826734668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pinchos_3
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 240
+        width: 114
+        height: 489
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c361bc947415144fa73395fef35e586
+      internalID: 777516038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pinchos_4
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 240
+        width: 114
+        height: 489
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b715a8eb49c46f4cba87e766e62eb38
+      internalID: 137352565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pinchos_7
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 240
+        width: 114
+        height: 489
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 625dd2104608a8543a42c00567593c10
+      internalID: 1602081755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pinchos_8
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 240
+        width: 114
+        height: 489
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5db443a8bbf679245a044b2232ec3f14
+      internalID: 2029467704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pinchos_9
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 240
+        width: 1345
+        height: 489
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adab2261c4c4d7a4a98baef6eddcf4cc
+      internalID: 1578440306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 829a0a5efffa8464b87bc56c5e1cf10d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Pinchos_0: 714541345
+      Pinchos_1: -2113882088
+      Pinchos_2: -826734668
+      Pinchos_3: 777516038
+      Pinchos_4: 137352565
+      Pinchos_7: 1602081755
+      Pinchos_8: 2029467704
+      Pinchos_9: 1578440306
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
