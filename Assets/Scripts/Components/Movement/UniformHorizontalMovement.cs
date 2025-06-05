@@ -12,10 +12,11 @@ public class UniformHorizontalMovement : MonoBehaviour
     /// Indica si actualmente se está moviendo horizontalmente.
     /// </summary>
     public bool IsMoving => Mathf.Abs(currentDirection) > 0.01f;
-
+    private Animator animator;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     /// <summary>
@@ -24,6 +25,9 @@ public class UniformHorizontalMovement : MonoBehaviour
     public void Move(float direction)
     {
         currentDirection = Mathf.Clamp(direction, -1f, 1f);
+            animator.SetBool("isMoving", direction!=0);
+        
+        
     }
 
     private void FixedUpdate()
