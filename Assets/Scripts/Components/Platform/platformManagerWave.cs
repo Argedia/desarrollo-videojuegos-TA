@@ -4,7 +4,7 @@ public class platformManagerWave : MonoBehaviour
 {
     public PlatformManager platformManager;
 
-    void OnWave(int waveNumber)
+    public void OnWave(int waveNumber)
     {
         switch (waveNumber)
         {

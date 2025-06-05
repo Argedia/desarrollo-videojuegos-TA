@@ -19,6 +19,7 @@ public class PlatformManager : MonoBehaviour
     {
         foreach (var data in allPlatforms)
         {
+            Debug.Log("GAASDADS");
             GameObject platform = Instantiate(data.prefab, data.position, Quaternion.identity);
             platform.SetActive(data.initiallyActive);
             spawnedPlatforms.Add(platform);
@@ -44,5 +45,34 @@ public class PlatformManager : MonoBehaviour
             Destroy(plat);
         }
         spawnedPlatforms.Clear();
+    }
+    
+    
+    public void OnWave(int waveNumber)
+    {
+        switch (waveNumber)
+        {
+            case 1:
+                EnablePlatform(1);
+                break;
+
+            case 2:
+                EnablePlatform(1);
+                break;
+
+            case 3:
+                EnablePlatform(3);
+                break;
+            case 4:
+                EnablePlatform(4);
+                break;
+            case 5:
+                EnablePlatform(5);
+                DisablePlatform(0);
+                break;
+            default:
+                ClearAll();
+                break;
+        }
     }
 }
