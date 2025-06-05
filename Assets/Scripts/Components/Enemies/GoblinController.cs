@@ -72,7 +72,7 @@ public class GoblinController : MonoBehaviour
 
         mover.Move(facingDir);
 
-        // ¿Vio al jugador?
+        //¿Vio al jugador?
         if (detector.JugadorDetectado)
             state = State.Chasing;
     }

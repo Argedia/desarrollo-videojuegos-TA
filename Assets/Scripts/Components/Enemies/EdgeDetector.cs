@@ -17,14 +17,14 @@ public class EdgeDetector : MonoBehaviour
 
     bool CheckGroundAhead()
     {
-        Vector2 origin = (Vector2)transform.position + rayOriginOffset;
+        Vector2 origin = transform.TransformPoint(rayOriginOffset); // Respeta la rotación y escala local
         RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, checkDistance, groundLayer);
         return hit.collider != null;
     }
 
     void OnDrawGizmosSelected()
     {
-        Vector2 origin = (Vector2)transform.position + rayOriginOffset;
+        Vector2 origin = transform.TransformPoint(rayOriginOffset);
         Gizmos.color = isGroundAhead ? Color.green : Color.red;
         Gizmos.DrawLine(origin, origin + Vector2.down * checkDistance);
     }
