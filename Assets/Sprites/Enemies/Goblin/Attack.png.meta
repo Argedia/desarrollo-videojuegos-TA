@@ -310,16 +310,6 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-<<<<<<< HEAD:Assets/Sprites/Enemigo/Goblin/Attack.png.meta
-      Attack_0: -7008412969330441016
-      Attack_1: -7763475090823894447
-      Attack_2: 302641331129538988
-      Attack_3: -6329420634031446844
-      Attack_4: -910092549403018386
-      Attack_5: 221524225039350300
-      Attack_6: 1290532464073988732
-      Attack_7: 4780903288873104255
-=======
       Attack_0: 40110319
       Attack_1: 28058737
       Attack_2: -913058090
@@ -328,7 +318,6 @@ TextureImporter:
       Attack_5: 1003913572
       Attack_6: 1918543519
       Attack_7: -1080228040
->>>>>>> origin:Assets/Sprites/Enemies/Goblin/Attack.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
