@@ -7,12 +7,14 @@ public class DamageReceiver : MonoBehaviour
     private KnockbackReceiver knockbackReceiver;
     private TemporaryInvulnerability tempInvulnerability;
     private Animator animator;
+    private IController controller;
 
     [SerializeField]
     private float invulnerabilityDuration = 1f; // Customize per entity in Inspector
 
     private void Awake()
     {
+        controller = GetComponent<IController>();
         health = GetComponent<Health>();
         knockbackReceiver = GetComponent<KnockbackReceiver>();
         tempInvulnerability = GetComponent<TemporaryInvulnerability>();
@@ -20,8 +22,8 @@ public class DamageReceiver : MonoBehaviour
     }
 
     public void ReceiveDamage(int damage,
-                              Vector2 hitOrigin,
-                              float knockbackForce = 0f)
+                          Vector2 hitOrigin,
+                          float knockbackForce = 0f)
     {
         if (health.IsDead) return;
         if (tempInvulnerability != null && tempInvulnerability.IsActive) return;
@@ -31,9 +33,22 @@ public class DamageReceiver : MonoBehaviour
         {
             tempInvulnerability?.Activate(invulnerabilityDuration);
 
+            controller?.DisableInput(); //aquí desactivas el control
+
             knockbackReceiver?.ApplyKnockback(hitOrigin, knockbackForce);
             animator?.SetTrigger("hit");
+
+            // Vuelve a activar el input después de invulnerabilidad
+            if (controller != null)
+                StartCoroutine(ReenableControlAfterDelay(invulnerabilityDuration));
         }
     }
+
+    private System.Collections.IEnumerator ReenableControlAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        controller.EnableInput();
+    }
+
 }
 
