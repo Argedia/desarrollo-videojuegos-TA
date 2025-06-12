@@ -9,12 +9,13 @@ using UnityEngine;
 [RequireComponent(typeof(UniformHorizontalMovement))]
 [RequireComponent(typeof(EdgeDetector))]
 [RequireComponent(typeof(EnemyPlayerDetector))]
-public class GoblinController : MonoBehaviour
+public class GoblinController : MonoBehaviour, IController
 {
+    private bool inputEnabled = true;
     // --- Parámetros de balance ---
     [Header("Velocidades")]
     [SerializeField] float patrolSpeed = 1.5f;
-    [SerializeField] float chaseSpeed  = 3f;
+    [SerializeField] float chaseSpeed = 3f;
 
     [Header("Rangos")]
     [SerializeField] float attackRange = 1.2f;
@@ -34,8 +35,8 @@ public class GoblinController : MonoBehaviour
     // -------------------------------------------------
     void Awake()
     {
-        mover    = GetComponent<UniformHorizontalMovement>();
-        edge     = GetComponent<EdgeDetector>();
+        mover = GetComponent<UniformHorizontalMovement>();
+        edge = GetComponent<EdgeDetector>();
         detector = GetComponent<EnemyPlayerDetector>();
     }
 
@@ -47,21 +48,22 @@ public class GoblinController : MonoBehaviour
 
     void Update()
     {
+        if (!inputEnabled) return;
+
         switch (state)
         {
             case State.Patrolling:
                 DoPatrol();
                 break;
-
             case State.Chasing:
                 DoChase();
                 break;
-
             case State.Attacking:
                 DoAttack();
                 break;
         }
     }
+
 
     // -------------------------------------------------
     void DoPatrol()
@@ -129,5 +131,16 @@ public class GoblinController : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x = Mathf.Abs(scale.x) * facingDir;
         transform.localScale = scale;
+    }
+    
+    public void DisableInput()
+    {
+        inputEnabled = false;
+        mover.Move(0f); // se detiene al instante
+    }
+
+    public void EnableInput()
+    {
+        inputEnabled = true;
     }
 }

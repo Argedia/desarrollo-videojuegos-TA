@@ -5,7 +5,7 @@ public class UniformJump : MonoBehaviour
 {
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private GroundChecker groundChecker;
-
+    Animator anim;
     private Rigidbody2D rb;
 
     private void Awake()
@@ -21,6 +21,8 @@ public class UniformJump : MonoBehaviour
         {
             Debug.LogWarning($"[Jump] No GroundChecker found on {gameObject.name}. Jumping won't work.");
         }
+
+        anim = GetComponent<Animator>();
     }
 
     public void TryJump()
@@ -30,5 +32,10 @@ public class UniformJump : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocityX, 0f); // Reset vertical velocity
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
+    }
+
+    public void Update()
+    {
+        anim.SetFloat("yVelocity", rb.linearVelocityY);   
     }
 }

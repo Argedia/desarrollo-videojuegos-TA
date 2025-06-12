@@ -180,6 +180,24 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Card3"",
+                    ""type"": ""Button"",
+                    ""id"": ""6e843983-0782-48e2-94a7-f43a2b05a811"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Card4"",
+                    ""type"": ""Button"",
+                    ""id"": ""d4dfe899-0de5-4fda-b297-138455c60146"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -504,6 +522,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""9054e2fb-72b0-49c7-9827-4ab9194a8f52"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""1534dc16-a6aa-499d-9c3a-22b47347b52a"",
                     ""path"": ""<Keyboard>/1"",
                     ""interactions"": """",
@@ -549,7 +578,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""9c6626ad-35f2-40b1-a44f-f51ef49977e4"",
-                    ""path"": ""<Keyboard>/x"",
+                    ""path"": ""<Keyboard>/z"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
@@ -560,11 +589,33 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""1284c611-4be1-4bd2-9e3c-0c65ef6f8941"",
-                    ""path"": ""<Keyboard>/c"",
+                    ""path"": ""<Keyboard>/x"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""Card2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8a38a60a-562a-496b-ac25-9433a3ed519c"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Card3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""deceed8f-2962-4d75-827b-d1b93c2fc63e"",
+                    ""path"": ""<Keyboard>/v"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Card4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1162,6 +1213,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_Card1 = m_Player.FindAction("Card1", throwIfNotFound: true);
         m_Player_Card2 = m_Player.FindAction("Card2", throwIfNotFound: true);
+        m_Player_Card3 = m_Player.FindAction("Card3", throwIfNotFound: true);
+        m_Player_Card4 = m_Player.FindAction("Card4", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1265,6 +1318,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Sprint;
     private readonly InputAction m_Player_Card1;
     private readonly InputAction m_Player_Card2;
+    private readonly InputAction m_Player_Card3;
+    private readonly InputAction m_Player_Card4;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1316,6 +1371,14 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Card2".
         /// </summary>
         public InputAction @Card2 => m_Wrapper.m_Player_Card2;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Card3".
+        /// </summary>
+        public InputAction @Card3 => m_Wrapper.m_Player_Card3;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Card4".
+        /// </summary>
+        public InputAction @Card4 => m_Wrapper.m_Player_Card4;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1372,6 +1435,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Card2.started += instance.OnCard2;
             @Card2.performed += instance.OnCard2;
             @Card2.canceled += instance.OnCard2;
+            @Card3.started += instance.OnCard3;
+            @Card3.performed += instance.OnCard3;
+            @Card3.canceled += instance.OnCard3;
+            @Card4.started += instance.OnCard4;
+            @Card4.performed += instance.OnCard4;
+            @Card4.canceled += instance.OnCard4;
         }
 
         /// <summary>
@@ -1413,6 +1482,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Card2.started -= instance.OnCard2;
             @Card2.performed -= instance.OnCard2;
             @Card2.canceled -= instance.OnCard2;
+            @Card3.started -= instance.OnCard3;
+            @Card3.performed -= instance.OnCard3;
+            @Card3.canceled -= instance.OnCard3;
+            @Card4.started -= instance.OnCard4;
+            @Card4.performed -= instance.OnCard4;
+            @Card4.canceled -= instance.OnCard4;
         }
 
         /// <summary>
@@ -1783,6 +1858,20 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnCard2(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Card3" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCard3(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Card4" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnCard4(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

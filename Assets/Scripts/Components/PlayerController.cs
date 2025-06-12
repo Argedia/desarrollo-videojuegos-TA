@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private UniformJump uniformJump;
 
     private PlayerInputActions controls;
+    public HandManager handManager;
 
     private bool inputEnabled = true;
 
@@ -16,7 +17,8 @@ public class PlayerController : MonoBehaviour
     {
         horizontalMovement = GetComponent<UniformHorizontalMovement>();
         uniformJump = GetComponent<UniformJump>();
-
+        if (handManager == null)
+            Debug.LogWarning("HandManager no asignado en PlayerController");
         controls = new PlayerInputActions();
 
         // Bind Move action
@@ -38,6 +40,32 @@ public class PlayerController : MonoBehaviour
             if (!inputEnabled) return;
             Debug.Log("Intentó saltar");
             uniformJump.TryJump();
+        };
+        // Bind Card 1
+        controls.Player.Card1.performed += ctx =>
+        {
+            if (!inputEnabled) return;
+            handManager.UseCard(0, transform);
+        };
+
+        // Bind Card 2
+        controls.Player.Card2.performed += ctx =>
+        {
+            if (!inputEnabled) return;
+            handManager.UseCard(1, transform);
+        };
+        //Bind Card 3
+        controls.Player.Card3.performed += ctx =>
+        {
+            if (!inputEnabled) return;
+            handManager.UseCard(2, transform);
+        };
+
+        // Bind Card 4
+        controls.Player.Card4.performed += ctx =>
+        {
+            if (!inputEnabled) return;
+            handManager.UseCard(3, transform);
         };
     }
 

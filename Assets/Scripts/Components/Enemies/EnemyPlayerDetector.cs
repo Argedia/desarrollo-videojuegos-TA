@@ -19,7 +19,11 @@ public class EnemyPlayerDetector : MonoBehaviour
         if (!player)
         {
             GameObject found = GameObject.FindGameObjectWithTag("Player");
-            if (found) player = found.transform;
+            if (found)
+            {
+                Debug.Log("Player encontrado!");
+                player = found.transform;
+            }
         }
     }
 
