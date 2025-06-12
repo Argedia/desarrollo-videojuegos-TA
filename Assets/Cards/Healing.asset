@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14c110aa732fbc63a981683df5448d1, type: 3}
   m_Name: Healing
   m_EditorClassIdentifier: 
-  cardName: AttackBoost
-  icon: {fileID: 131324209, guid: 0ec6d02e7101a1c479dfd5e8af64e3f3, type: 3}
+  cardName: Healing
+  icon: {fileID: -1916736948, guid: 0ec6d02e7101a1c479dfd5e8af64e3f3, type: 3}
   effects: []
   effectBoxPrefab: {fileID: 4224682194418504183, guid: 353180956c52052099e5949e2ead8a5d, type: 3}
   relativeSpawnPosition: {x: 0, y: 0}
