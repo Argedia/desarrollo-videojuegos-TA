@@ -33,7 +33,7 @@ public class DamageReceiver : MonoBehaviour
         {
             tempInvulnerability?.Activate(invulnerabilityDuration);
 
-            controller?.DisableInput(); //aquí desactivas el control
+            //controller?.DisableInput(); //aquí desactivas el control
 
             knockbackReceiver?.ApplyKnockback(hitOrigin, knockbackForce);
             animator?.SetTrigger("hit");
@@ -47,7 +47,7 @@ public class DamageReceiver : MonoBehaviour
     private System.Collections.IEnumerator ReenableControlAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        controller.EnableInput();
+        //controller.EnableInput();
     }
 
 }

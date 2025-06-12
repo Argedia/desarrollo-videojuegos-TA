@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(UniformHorizontalMovement))]
 [RequireComponent(typeof(UniformJump))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : Controller, IController
 {
     private UniformHorizontalMovement horizontalMovement;
     private UniformJump uniformJump;
@@ -27,6 +27,10 @@ public class PlayerController : MonoBehaviour
             if (!inputEnabled) return;
             Vector2 input = ctx.ReadValue<Vector2>();
             horizontalMovement.Move(input.x);
+            if (input.x * facingDir < 0)
+            {
+                Flip();
+            }
         };
         controls.Player.Move.canceled += ctx =>
         {

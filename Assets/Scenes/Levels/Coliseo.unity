@@ -216,7 +216,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1033241804}
   - component: {fileID: 1033241805}
-  - component: {fileID: 1033241806}
   - component: {fileID: 1033241807}
   m_Layer: 0
   m_Name: PlatformManager
@@ -271,19 +270,6 @@ MonoBehaviour:
   - prefab: {fileID: 6559865804974454760, guid: c92d2e7c4cc86c2439553f7cd1a62c33, type: 3}
     position: {x: 0, y: 0}
     initiallyActive: 0
---- !u!114 &1033241806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1033241803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa3ee6d465c31df47816d4a7473ab060, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  platformManager: {fileID: 1033241805}
 --- !u!114 &1033241807
 MonoBehaviour:
   m_ObjectHideFlags: 0

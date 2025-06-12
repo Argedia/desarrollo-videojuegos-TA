@@ -9,7 +9,7 @@ using UnityEngine;
 [RequireComponent(typeof(UniformHorizontalMovement))]
 [RequireComponent(typeof(EdgeDetector))]
 [RequireComponent(typeof(EnemyPlayerDetector))]
-public class GoblinController : MonoBehaviour, IController
+public class GoblinController : Controller, IController
 {
     private bool inputEnabled = true;
     // --- Parámetros de balance ---
@@ -29,8 +29,6 @@ public class GoblinController : MonoBehaviour, IController
     enum State { Patrolling, Chasing, Attacking }
     State state = State.Patrolling;
 
-    //  +1 si mira a la derecha, -1 a la izquierda.
-    int facingDir = 1;
 
     // -------------------------------------------------
     void Awake()
@@ -123,15 +121,7 @@ public class GoblinController : MonoBehaviour, IController
     }
 
     // -------------------------------------------------
-    void Flip()
-    {
-        facingDir *= -1;
-
-        // Si tu sprite usa escala local para flip visual
-        Vector3 scale = transform.localScale;
-        scale.x = Mathf.Abs(scale.x) * facingDir;
-        transform.localScale = scale;
-    }
+    
     
     public void DisableInput()
     {
