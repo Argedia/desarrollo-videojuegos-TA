@@ -1,19 +1,21 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EffectBox : MonoBehaviour
 {
-    [SerializeField]
-    private List<ScriptableObject> effects;
+    private Effect[] effects;
+    private Transform caster;
+
+    public void Initialize(Effect[] newEffects, Transform origin)
+    {
+        effects = newEffects;
+        caster = origin;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        foreach (var effectObj in effects)
+        foreach (var effect in effects)
         {
-            if (effectObj is IEffect effect)
-            {
-                effect.Apply(other.gameObject);
-            }
+            effect.ApplyTo(other.gameObject);
         }
     }
 }

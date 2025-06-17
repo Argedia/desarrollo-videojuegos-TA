@@ -11,12 +11,31 @@ public class CardData : ScriptableObject
 
     public void Activate(Transform caster)
     {
-        foreach (var effect in effects)
+        Vector2 spawnPosition = (Vector2)caster.position + relativeSpawnPosition;
+
+        GameObject box = Object.Instantiate(effectBoxPrefab, spawnPosition, Quaternion.identity);
+        
+        var effectBox = box.GetComponent<EffectBox>();
+        if (effectBox != null)
         {
-            Vector2 spawnPosition = (Vector2)caster.position + relativeSpawnPosition;
-            var box = Object.Instantiate(effectBoxPrefab, spawnPosition, Quaternion.identity);
-            box.GetComponent<EffectBox>().effect = effect;
-            Object.Destroy(box, effect.duration + 0.5f);
+            effectBox.Initialize(effects, caster); // Nuevo método para setear data
+            float maxDuration = GetMaxEffectDuration();
+            Object.Destroy(box, maxDuration + 0.5f);
         }
+        else
+        {
+            Debug.LogWarning("EffectBox prefab no tiene componente EffectBox.");
+        }
+    }
+
+    private float GetMaxEffectDuration()
+    {
+        float max = 0f;
+        foreach (var e in effects)
+        {
+            if (e.duration > max)
+                max = e.duration;
+        }
+        return max;
     }
 }
