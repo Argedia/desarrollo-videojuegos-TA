@@ -270,6 +270,12 @@ MonoBehaviour:
   - prefab: {fileID: 6559865804974454760, guid: c92d2e7c4cc86c2439553f7cd1a62c33, type: 3}
     position: {x: 0, y: 0}
     initiallyActive: 0
+  - prefab: {fileID: 4883457680494881736, guid: fc869ccf09f5a3c459105a4fe1d17808, type: 3}
+    position: {x: 0, y: 0}
+    initiallyActive: 0
+  - prefab: {fileID: 4515327248554423298, guid: 8b384f4d5ffc2c8439569c3a8b9237d3, type: 3}
+    position: {x: 0, y: 0}
+    initiallyActive: 0
 --- !u!114 &1033241807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +320,51 @@ Transform:
   m_Children:
   - {fileID: 486939379}
   - {fileID: 1033241804}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1339273572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1339273574}
+  - component: {fileID: 1339273573}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1339273573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339273572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 342fc56e918f21b4a9871792c431f3ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minionsKilled: 0
+--- !u!4 &1339273574
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1339273572}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.3347827, y: 0.4037001, z: 0.038625944}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1966532720
@@ -459,3 +510,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 1966532724}
   - {fileID: 1261424101}
+  - {fileID: 1339273574}
