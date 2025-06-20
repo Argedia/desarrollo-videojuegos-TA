@@ -1,31 +1,21 @@
-using System.Collections;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Effects/Burn")]
-public class BurnEffect : ScriptableObject, IEffect
+public class BurnEffect : MonoBehaviour, IEffect
 {
     public int damagePerTick = 1;
-    public float tickInterval = 1f;
+    public float tickInterval = 0.5f;
     public float duration = 3f;
-    public Color colorWhileBurning = Color.red;
 
-    public void Apply(GameObject target)
+    public void ApplyTo(GameObject target)
     {
         var runner = target.GetComponent<MonoBehaviour>();
         if (runner != null)
-        {
-            runner.StartCoroutine(DoBurn(target));
-        }
+            runner.StartCoroutine(Burn(target));
     }
 
-    private IEnumerator DoBurn(GameObject target)
+    private System.Collections.IEnumerator Burn(GameObject target)
     {
         var health = target.GetComponent<Health>();
-        var sr = target.GetComponent<SpriteRenderer>();
-        Color original = sr ? sr.color : Color.white;
-
-        if (sr) sr.color = colorWhileBurning;
-
         float elapsed = 0f;
         while (elapsed < duration)
         {
@@ -33,7 +23,5 @@ public class BurnEffect : ScriptableObject, IEffect
             yield return new WaitForSeconds(tickInterval);
             elapsed += tickInterval;
         }
-
-        if (sr) sr.color = original;
     }
 }
