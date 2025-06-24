@@ -29,7 +29,7 @@ public class ArenaManager : MonoBehaviour
             Debug.Log(platformCounter);
         }
         else{ yield break;}
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(10);
         StartCoroutine(SetPlatforms());
     }
 }

@@ -8,7 +8,7 @@ public class PlatformManager : MonoBehaviour
     {
         public GameObject prefab; // Prefab de la plataforma
         public Vector2 position;  // Dónde aparecerá
-        public bool initiallyActive = true; // Si está activa desde el inicio
+        public bool initiallyActive; // Si está activa desde el inicio
     }
 
     public List<PlatformSpawnData> allPlatforms; // Lista editable desde el Inspector
@@ -54,18 +54,22 @@ public class PlatformManager : MonoBehaviour
             case 1:
                 EnablePlatform(6);
                 EnablePlatform(7);
+                EnablePlatform(3);
 
-                DisablePlatform(0);
                 break;
 
             case 2:
+                
                 break;
 
             case 3:
+                
                 break;
             case 4:
+                
                 break;
             case 5:
+
                 break;
             default:
                 ClearAll();
