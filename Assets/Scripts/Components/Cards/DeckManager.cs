@@ -13,6 +13,8 @@ public class DeckManager : MonoBehaviour
     public Text cardCountText;
     public Image deckBackImage;
 
+    public int DeckSize { get { return drawPile.Count; } }
+
     void Start()
     {
         ShuffleDeck();

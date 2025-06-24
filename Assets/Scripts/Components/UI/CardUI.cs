@@ -14,10 +14,4 @@ public class CardUI : MonoBehaviour
         Debug.Log(data.icon.name);
         iconImage.sprite = data.icon;
     }
-
-    public void Activate(Transform caster)
-    {
-        data.Activate(caster);  
-        Destroy(gameObject);   
-    }
 }
