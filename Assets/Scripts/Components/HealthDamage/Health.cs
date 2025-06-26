@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(BloodVisual))]
 public class Health : MonoBehaviour
 {
     [Header("Health Settings")]
@@ -14,12 +15,25 @@ public class Health : MonoBehaviour
 
     [SerializeField] private Animator animator;
     [SerializeField] private float timeToDestroy = 2f;
-
+    private BloodVisual bloodEffect;
+    private SoulVisual soulEffect;
+    [Header("Blood Effect Settings")]
+    public float maxBlood = 50f;
     private void Awake()
     {
         currentHealth = maxHealth;
         if (animator == null)
             animator = GetComponent<Animator>();
+
+        if (bloodEffect == null)
+            bloodEffect = GetComponent<BloodVisual>();
+
+        soulEffect = GetComponent<SoulVisual>();
+        if (soulEffect == null)
+            soulEffect = gameObject.AddComponent<SoulVisual>();
+
+        bloodEffect.CreateDefaultBloodEffect();
+
     }
     /// <summary>
     /// Apply damage. Returns true if damaged.
@@ -34,6 +48,8 @@ public class Health : MonoBehaviour
         if (CompareTag("Enemy")) // Solo si es enemigo
             GameEvents.EnemyDamaged(this, amount);
 
+        UpdateBloodEffect();
+
         if (currentHealth <= 0)
         {
             currentHealth = 0;
@@ -45,6 +61,11 @@ public class Health : MonoBehaviour
             var controller = GetComponent<IController>();
             controller?.DisableInput();
             animator?.SetTrigger("death");
+
+
+            bloodEffect?.SetBloodLevel(0);
+            soulEffect?.PlaySoulEffect();
+
             StartCoroutine(DelayedDestroy());
         }
 
@@ -59,6 +80,7 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0) return;
 
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+        UpdateBloodEffect();
     }
 
     /// <summary>
@@ -67,13 +89,27 @@ public class Health : MonoBehaviour
     public void RestoreFullHealth()
     {
         currentHealth = maxHealth;
+        UpdateBloodEffect();
     }
 
     public bool IsDead => currentHealth <= 0;
-    
-        private IEnumerator DelayedDestroy()
+
+    private IEnumerator DelayedDestroy()
     {
         yield return new WaitForSeconds(timeToDestroy);
         Destroy(gameObject);
+    }
+    
+    private void UpdateBloodEffect()
+    {
+        if (bloodEffect == null)
+        {
+            Debug.Log("Aqui NO hay SANGRE!");
+        }
+
+        float bloodLevel = Mathf.Lerp(0, maxBlood, 1f - (float)currentHealth / maxHealth);
+        Debug.Log("Nuevo nivel de sangre:"+bloodLevel);
+        
+        bloodEffect.SetBloodLevel(bloodLevel);
     }
 }
