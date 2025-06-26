@@ -18,7 +18,11 @@ public class Health : MonoBehaviour
     private BloodVisual bloodEffect;
     private SoulVisual soulEffect;
     [Header("Blood Effect Settings")]
-    public float maxBlood = 50f;
+    public float maxBlood = 20f;
+
+    private SpriteRenderer spriteRenderer;
+    private Coroutine blinkCoroutine;
+
     private void Awake()
     {
         currentHealth = maxHealth;
@@ -33,6 +37,7 @@ public class Health : MonoBehaviour
             soulEffect = gameObject.AddComponent<SoulVisual>();
 
         bloodEffect.CreateDefaultBloodEffect();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
     }
     /// <summary>
@@ -99,7 +104,7 @@ public class Health : MonoBehaviour
         yield return new WaitForSeconds(timeToDestroy);
         Destroy(gameObject);
     }
-    
+
     private void UpdateBloodEffect()
     {
         if (bloodEffect == null)
@@ -108,8 +113,48 @@ public class Health : MonoBehaviour
         }
 
         float bloodLevel = Mathf.Lerp(0, maxBlood, 1f - (float)currentHealth / maxHealth);
-        Debug.Log("Nuevo nivel de sangre:"+bloodLevel);
-        
         bloodEffect.SetBloodLevel(bloodLevel);
+
+        // Parpadeo si es el jugador y tiene solo 1 de salud
+        if (CompareTag("Player"))
+        {
+            if (currentHealth == 1 && blinkCoroutine == null)
+            {
+                blinkCoroutine = StartCoroutine(BlinkRed());
+            }
+            else if (currentHealth != 1 && blinkCoroutine != null)
+            {
+                StopCoroutine(blinkCoroutine);
+                blinkCoroutine = null;
+                ResetColor();
+            }
+        }
     }
+
+
+    private IEnumerator BlinkRed()
+    {
+        while (true)
+        {
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.color = Color.red;
+            }
+            yield return new WaitForSeconds(0.2f);
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.color = Color.white;
+            }
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
+
+    private void ResetColor()
+    {
+        if (spriteRenderer != null)
+            spriteRenderer.color = Color.white;
+    }
+
+    
+    
 }

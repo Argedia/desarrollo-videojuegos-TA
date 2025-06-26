@@ -17,10 +17,10 @@ public class BloodVisual : MonoBehaviour
 
         // Configurar el sistema de partículas
         var main = bloodDrip.main;
-        main.startLifetime = new ParticleSystem.MinMaxCurve(0.3f, 0.5f);
-        main.startSpeed = new ParticleSystem.MinMaxCurve(0.5f, 1f); 
-        main.startSize = new ParticleSystem.MinMaxCurve(0.05f, 0.1f);
-        main.startColor = Color.red;
+        main.startLifetime = 0.5f;
+        main.startSpeed = 1f; 
+        main.startSize = 0.05f;
+        main.startColor = new Color(174f, 15f, 15f, 255f);
         main.simulationSpace = ParticleSystemSimulationSpace.World;
         main.gravityModifier = 1f;
         main.loop = true;
@@ -30,7 +30,7 @@ public class BloodVisual : MonoBehaviour
 
         var shape = bloodDrip.shape;
         shape.shapeType = ParticleSystemShapeType.Cone;
-        shape.angle = 15;
+        shape.angle = 25f;
         shape.radius = 0.1f;
 
         var renderer = bloodDrip.GetComponent<ParticleSystemRenderer>();
