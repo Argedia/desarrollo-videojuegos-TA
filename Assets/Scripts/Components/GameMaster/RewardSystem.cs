@@ -17,6 +17,7 @@ public class RewardSystem : MonoBehaviour
 
     private void GiveSoul(Health enemy)
     {
+        Debug.Log("Alma recaudada");
         if (energyManager != null)
             energyManager.Energy += soulsPerKill;
     }

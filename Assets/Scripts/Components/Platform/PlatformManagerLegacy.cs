@@ -1,14 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class PlatformManager : MonoBehaviour
+public class PlatformManagerLegacy : MonoBehaviour
 {
     [System.Serializable]
     public class PlatformSpawnData
     {
         public GameObject prefab; // Prefab de la plataforma
-        public Vector2 position;  // Dónde aparecerá
-        public bool initiallyActive; // Si está activa desde el inicio
+        public Vector2 position;  // Dï¿½nde aparecerï¿½
+        public bool initiallyActive = true; // Si estï¿½ activa desde el inicio
     }
 
     public List<PlatformSpawnData> allPlatforms; // Lista editable desde el Inspector
@@ -54,22 +54,18 @@ public class PlatformManager : MonoBehaviour
             case 1:
                 EnablePlatform(6);
                 EnablePlatform(7);
-                EnablePlatform(3);
 
+                DisablePlatform(0);
                 break;
 
             case 2:
-                
                 break;
 
             case 3:
-                
                 break;
             case 4:
-                
                 break;
             case 5:
-
                 break;
             default:
                 ClearAll();
