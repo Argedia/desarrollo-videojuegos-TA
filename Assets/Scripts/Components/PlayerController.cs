@@ -43,7 +43,7 @@
             controls.Player.Jump.performed += ctx =>
             {
                 if (!inputEnabled) return;
-                Debug.Log("Intentó saltar");
+                //Debug.Log("Intentó saltar");
                 uniformJump.TryJump();
             };
             // Bind Card 1

@@ -10,9 +10,22 @@ public class EnemyManager : MonoBehaviour
 
     private List<EnemyType> plannedEnemies = new();
 
-        private void Awake()
+    private void Awake()
     {
         plannedEnemies = new List<EnemyType>();
+    }
+    private void OnEnable()
+    {
+        GameEvents.OnEnemyDeath += HandleEnemyDeath;
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.OnEnemyDeath -= HandleEnemyDeath;
+    }
+        private void HandleEnemyDeath(Health enemy)
+    {
+        OnEnemyDeath();
     }
     // Paso 1: planear enemigos y contar los que necesitan plataforma
     public int PlanEnemies(int points)
@@ -65,7 +78,11 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    public void OnEnemyDeath() => enemiesAlive--;
+    public void OnEnemyDeath()
+    {
+        enemiesAlive--;
+        Debug.Log("Quedan vivos:"+ enemiesAlive);
+    }
     public bool AllEnemiesDefeated() => enemiesAlive <= 0;
 
     private Vector3 GetFreeAirPosition()

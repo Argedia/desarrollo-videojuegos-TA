@@ -4,20 +4,15 @@ using UnityEngine;
 public class PlatformManager : MonoBehaviour
 {
     public List<PlatformPiece> platformLibrary;
-    public int gridWidth = 6, gridHeight = 3;
+    public int gridWidth, gridHeight;
     public float cellWidth;
     public float cellHeight;
 
     private bool[,] grid;
     private List<PlatformInstance> spawnedPlatforms;
 
-    public float totalWidth = 30f;   // ancho del área total donde irá el grid
-    public float totalHeight = 15f;  // alto del área total
-
     private void Awake()
     {
-        cellWidth = totalWidth / gridWidth;
-        cellHeight = totalHeight / gridHeight;
     }
 
     public void GeneratePlatforms(int points, int requiredEnemySlots)
@@ -41,6 +36,7 @@ public class PlatformManager : MonoBehaviour
             {
                 SpawnPlatform(piece, pos.Value);
                 points -= piece.cost;
+                Debug.Log("Quedan puntos de plataformas:" + points);
                 currentSlots += piece.maxEnemies;
             }
 
@@ -92,10 +88,11 @@ public class PlatformManager : MonoBehaviour
 
     private Vector3 GridToWorld(Vector2Int gridPos, Vector2Int size)
     {
-        Vector2 worldOrigin = new Vector2(-totalWidth / 2f, -totalHeight / 2f);
+        Vector2 worldOrigin = new Vector2(-gridWidth * cellWidth / 2f, -gridHeight * cellHeight / 2f);
         Vector2 centerOffset = new Vector2(size.x * cellWidth, size.y * cellHeight) / 2f;
         return worldOrigin + new Vector2(gridPos.x * cellWidth, gridPos.y * cellHeight) + centerOffset;
     }
+
 
 
     public List<PlatformInstance> GetSpawnablePlatforms() => spawnedPlatforms;
@@ -103,15 +100,42 @@ public class PlatformManager : MonoBehaviour
     // Necesitas este método para que funcione correctamente
     private Vector2Int? TryPlace(PlatformPiece piece)
     {
-        int attempts = 20;
+        int attempts = 50;
+
         while (attempts-- > 0)
         {
-            int x = Random.Range(0, gridWidth - piece.size.x + 1);
-            int y = Random.Range(0, gridHeight - piece.size.y + 1);
-            if (CanPlaceAt(x, y, piece.size))
-                return new Vector2Int(x, y);
+            // Regla 1: si no hay plataformas todavía → colocar abajo
+            if (spawnedPlatforms.Count == 0)
+            {
+                int x = Random.Range(0, gridWidth - piece.size.x + 1);
+                int y = 0; // capa más baja
+                if (CanPlaceAt(x, y, piece.size))
+                    return new Vector2Int(x, y);
+            }
+            else
+            {
+                // Regla 2: colocar cerca de plataformas existentes
+                foreach (var platform in spawnedPlatforms)
+                {
+                    Vector2Int basePos = platform.gridPos;
+                    Vector2Int size = platform.data.size;
+
+                    for (int dx = -1; dx <= size.x; dx++) // permite -1 (izq) y +size (der)
+                    {
+                        int x = basePos.x + dx;
+                        int y = basePos.y + size.y; // justo encima
+
+                        if (x < 0 || x + piece.size.x > gridWidth) continue;
+                        if (y < 0 || y + piece.size.y > gridHeight) continue;
+
+                        if (CanPlaceAt(x, y, piece.size))
+                            return new Vector2Int(x, y);
+                    }
+                }
+            }
         }
-        return null;
+
+        return null; // No se pudo
     }
 
     private bool CanPlaceAt(int x, int y, Vector2Int size)
@@ -125,18 +149,53 @@ public class PlatformManager : MonoBehaviour
         }
         return true;
     }
-    
-    private void OnDrawGizmos()
-{
-    Gizmos.color = Color.green;
-    for (int x = 0; x < gridWidth; x++)
+
+    public void ClearPlatforms()
     {
-        for (int y = 0; y < gridHeight; y++)
+        if (spawnedPlatforms == null)
         {
-            Vector3 center = GridToWorld(new Vector2Int(x, y), Vector2Int.one);
-            Gizmos.DrawWireCube(center, new Vector3(cellWidth, cellHeight, 0.1f));
+            Debug.Log("No encontré plataformas!");
         }
+
+        foreach (var platform in spawnedPlatforms)
+        {
+            if (platform.instance != null)
+                Destroy(platform.instance);
+        }
+
+        spawnedPlatforms.Clear();
+        grid = new bool[gridWidth, gridHeight]; // resetear grilla
     }
-}
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        if (grid == null) {
+            for (int x = 0; x < gridWidth; x++)
+            {
+                for (int y = 0; y < gridHeight; y++)
+                {
+                    Vector3 center = GridToWorld(new Vector2Int(x, y), Vector2Int.one);
+                    Gizmos.DrawWireCube(center, new Vector3(cellWidth, cellHeight, 0.1f));
+                }
+            }
+        }
+        
+        else
+        {
+            for (int x = 0; x < gridWidth; x++)
+            {
+                for (int y = 0; y < gridHeight; y++)
+                {
+                    if (grid[x, y])
+                    {
+                        Vector3 center = GridToWorld(new Vector2Int(x, y), Vector2Int.one);
+                        Gizmos.color = Color.red;
+                        Gizmos.DrawCube(center, new Vector3(cellWidth * 0.9f, cellHeight * 0.9f, 0.1f));
+                    }
+                }
+            }
+        }
+
+    }
 
 }

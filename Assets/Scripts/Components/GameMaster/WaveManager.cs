@@ -70,6 +70,9 @@ public class WaveManager : MonoBehaviour
 
                     yield return new WaitForSeconds(restTime);
                     CurrentWave++;
+                    Debug.Log("Avanzando a la siguiente oleada...");
+                    platformManager.ClearPlatforms();
+                    Debug.Log("Limpiando la escena...");
                     break;
                 }
 
