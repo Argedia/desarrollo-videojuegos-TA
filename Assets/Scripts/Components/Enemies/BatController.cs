@@ -9,6 +9,7 @@ using UnityEngine;
 [RequireComponent(typeof(UniformHorizontalMovement))]
 [RequireComponent(typeof(UniformVerticalMovement))]
 [RequireComponent(typeof(EnemyPlayerDetector))]
+[RequireComponent(typeof(Attacker))]
 public class BatController : Controller, IController
 {
     private bool inputEnabled = true;
@@ -33,7 +34,8 @@ public class BatController : Controller, IController
     UniformHorizontalMovement horizontalMover;
     UniformVerticalMovement verticalMover;
     EnemyPlayerDetector detector;
-    Animator animator;
+    Attacker attacker;
+    Rigidbody2D rb; // Referencia al Rigidbody2D
     
     // --- Estado interno ---
     enum State { Patrolling, Diving, Returning }
@@ -54,7 +56,8 @@ public class BatController : Controller, IController
         horizontalMover = GetComponent<UniformHorizontalMovement>();
         verticalMover = GetComponent<UniformVerticalMovement>();
         detector = GetComponent<EnemyPlayerDetector>();
-        animator = GetComponent<Animator>();
+        attacker = GetComponent<Attacker>();
+        rb = GetComponent<Rigidbody2D>();
         
         // El centro de patrullaje es la posición inicial
         patrolCenter = transform.position;
@@ -88,18 +91,17 @@ public class BatController : Controller, IController
     // -------------------------------------------------
     void DoPatrol()
     {
-        // Movimiento ondulante hacia el objetivo de patrulla
-        MoveTowardsTarget(currentPatrolTarget, patrolSpeed);
-        
-        // Añadir movimiento ondulante vertical
+        // Crear movimiento ondulante combinando el objetivo de patrulla con una onda vertical
         float waveOffset = Mathf.Sin(patrolTimer * waveFrequency) * waveAmplitude;
-        Vector2 waveTarget = currentPatrolTarget + Vector2.up * waveOffset;
-        MoveTowardsTarget(waveTarget, patrolSpeed);
+        Vector2 finalTarget = currentPatrolTarget + Vector2.up * waveOffset;
+        
+        // Un solo movimiento hacia el objetivo con onda aplicada
+        MoveTowardsTarget(finalTarget, patrolSpeed);
         
         patrolTimer += Time.deltaTime;
         
         // Si llegamos cerca del objetivo, generar uno nuevo
-        if (Vector2.Distance(transform.position, currentPatrolTarget) < 1f)
+        if (Vector2.Distance(transform.position, currentPatrolTarget) < 0.8f)
         {
             GenerateNewPatrolTarget();
         }
@@ -119,15 +121,20 @@ public class BatController : Controller, IController
         // Movimiento directo hacia el objetivo de dive (donde estaba el jugador)
         MoveTowardsTarget(diveTarget, diveSpeed);
         
-        // Si el jugador se alejó mucho, volver a patrullar
-        if (!detector.JugadorDetectado || 
-            detector.DistanciaAlJugador > returnToPatrolDistance)
+        // Si llegamos cerca del objetivo, ejecutar ataque
+        if (Vector2.Distance(transform.position, diveTarget) < 1.5f)
         {
+            // Atacar cuando realmente llega al objetivo
+            if (attacker != null)
+                attacker.Attack();
+            
             state = State.Returning;
+            return;
         }
         
-        // Si llegamos cerca del objetivo, regresar
-        if (Vector2.Distance(transform.position, diveTarget) < 1.5f)
+        // Si el jugador se alejó mucho, volver a patrullar sin atacar
+        if (!detector.JugadorDetectado || 
+            detector.DistanciaAlJugador > returnToPatrolDistance)
         {
             state = State.Returning;
         }
@@ -150,23 +157,43 @@ public class BatController : Controller, IController
     void MoveTowardsTarget(Vector2 target, float speed)
     {
         Vector2 direction = (target - (Vector2)transform.position).normalized;
+        float distance = Vector2.Distance(transform.position, target);
         
-        // Actualizar facing direction
-        if (direction.x > 0.1f && facingDir != 1)
-            Flip();
-        else if (direction.x < -0.1f && facingDir != -1)
-            Flip();
+        // Suavizar el movimiento cuando está cerca del objetivo
+        float speedMultiplier = Mathf.Clamp01(distance / 2f); // Reduce speed within 2 units
+        float adjustedSpeed = speed * speedMultiplier;
         
-        // Mover en ambas direcciones
-        horizontalMover.Move(direction.x);
-        verticalMover.Move(direction.y);
+        // Actualizar facing direction solo cuando hay movimiento significativo horizontal
+        if (Mathf.Abs(direction.x) > 0.3f)
+        {
+            if (direction.x > 0 && facingDir != 1)
+                Flip();
+            else if (direction.x < 0 && facingDir != -1)
+                Flip();
+        }
+        
+        // Mover suavemente en ambas direcciones
+        horizontalMover.Move(direction.x * speedMultiplier);
+        verticalMover.Move(direction.y * speedMultiplier);
     }
     
     void GenerateNewPatrolTarget()
     {
         // Generar un punto aleatorio dentro del radio de patrulla
-        Vector2 randomOffset = Random.insideUnitCircle * patrolRadius;
+        // Favorecer puntos más alejados del centro para vuelos más naturales
+        Vector2 randomDirection = Random.insideUnitCircle.normalized;
+        float randomDistance = Random.Range(patrolRadius * 0.6f, patrolRadius);
+        Vector2 randomOffset = randomDirection * randomDistance;
         currentPatrolTarget = patrolCenter + randomOffset;
+        
+        // Asegurar que el objetivo no esté demasiado cerca de la posición actual
+        while (Vector2.Distance(transform.position, currentPatrolTarget) < 1.5f)
+        {
+            randomDirection = Random.insideUnitCircle.normalized;
+            randomDistance = Random.Range(patrolRadius * 0.6f, patrolRadius);
+            randomOffset = randomDirection * randomDistance;
+            currentPatrolTarget = patrolCenter + randomOffset;
+        }
     }
     
     bool CanDive()
@@ -179,24 +206,30 @@ public class BatController : Controller, IController
         state = State.Diving;
         diveTarget = detector.player.position;
         lastDiveTime = Time.time;
-        animator.SetTrigger("Attack");
-        SendMessage("OnBatDive", SendMessageOptions.DontRequireReceiver);
         
-        // Enviar mensaje de ataque para efectos/sonidos
-        SendMessage("OnBatDive", SendMessageOptions.DontRequireReceiver);
+        // Mensaje para efectos de sonido/visuales del inicio del dive
+        SendMessage("OnBatStartDive", SendMessageOptions.DontRequireReceiver);
     }
 
-    public void Die()
+    // --- MÉTODOS DE MUERTE Y CAÍDA ---
+    /// <summary>
+    /// Llama este método cuando el murciélago muere (por ejemplo, desde DamageReceiver o un Animation Event).
+    /// </summary>
+    public void OnDeathFall()
     {
+        // Desactivar la IA y el input
         DisableInput();
-        animator.SetTrigger("Die");
-        // Desactivar colisión, etc.
-    }
-
-    // Llamado cuando recibe daño
-    public void TakeHit()
-    {
-        animator.SetTrigger("Hit");
+        // Desactivar scripts de movimiento
+        if (horizontalMover) horizontalMover.enabled = false;
+        if (verticalMover) verticalMover.enabled = false;
+        // Habilitar gravedad y caída
+        if (rb)
+        {
+            rb.gravityScale = 2.5f; // Ajusta según lo rápido que quieras que caiga
+            rb.linearVelocity = Vector2.zero; // Detener cualquier movimiento previo
+            rb.constraints = RigidbodyConstraints2D.None; // Permitir rotación si quieres que caiga girando
+        }
+        if (attacker) attacker.enabled = false;
     }
     
     // -------------------------------------------------
