@@ -38,7 +38,7 @@ public class MushroomController : Controller, IController
     Jump jumpComponent; // Nuevo: Referencia al componente Jump
 
     // --- Estado interno ---
-    enum State { Patrolling, Chasing, Rushing, Jumping, Attacking, Dead }
+    enum State { Patrolling, Chasing, Rushing, Jumping, Attacking }
     State state = State.Patrolling;
     Animator animator;
 
@@ -71,7 +71,7 @@ public class MushroomController : Controller, IController
 
     void Update()
     {
-        if (!inputEnabled || state == State.Dead) return;
+        if (!inputEnabled) return;
 
         switch (state)
         {
@@ -89,9 +89,6 @@ public class MushroomController : Controller, IController
                 break;
             case State.Attacking:
                 DoAttack();
-                break;
-            case State.Dead:
-                // No hacer nada, está muerto
                 break;
         }
     }
@@ -411,47 +408,5 @@ public class MushroomController : Controller, IController
             jumpComponent.OnJumpStarted -= OnJumpStarted;
             jumpComponent.OnLanded -= OnLanded;
         }
-    }
-    
-    // -------------------------------------------------
-    // MÉTODOS DE MUERTE Y CAÍDA
-    // -------------------------------------------------
-    
-    /// <summary>
-    /// Llama este método cuando el hongo muere (por ejemplo, desde Health o un Animation Event).
-    /// Detiene toda la lógica de IA y permite que la animación de muerte se reproduzca.
-    /// </summary>
-    public void OnDeathFall()
-    {
-        // Desactivar la IA y el input inmediatamente
-        DisableInput();
-        
-        // Detener todos los scripts de movimiento
-        if (mover) mover.enabled = false;
-        
-        // Detener el componente Jump si existe
-        if (jumpComponent) jumpComponent.enabled = false;
-        
-        // Detener cualquier movimiento del rigidbody pero permitir que caiga
-        if (rb)
-        {
-            rb.linearVelocity = Vector2.zero; // Detener movimiento previo
-            rb.gravityScale = 2.5f; // Permitir caída si está en el aire
-        }
-        
-        // Asegurar que todas las animaciones de movimiento estén desactivadas
-        if (animator)
-        {
-            animator.SetBool("isMoving", false);
-            animator.SetBool("isRushing", false);
-            animator.SetBool("isJumping", false);
-            // El trigger "death" ya debería haber sido activado por el componente Health
-        }
-        
-        // Cambiar a estado de muerte para detener toda lógica de IA
-        state = State.Dead;
-        
-        // Mensaje para efectos adicionales
-        SendMessage("OnMushroomDeath", SendMessageOptions.DontRequireReceiver);
     }
 }
