@@ -3,6 +3,7 @@ using UnityEngine;
 public class GroundChecker : MonoBehaviour
 {
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask TruegroundLayer;
     [SerializeField] private Vector2 boxSize = new Vector2(0.5f, 0.1f);
     [SerializeField] private Vector2 boxOffset = new Vector2(0f, -0.5f);
     Animator anim;
@@ -14,7 +15,7 @@ public class GroundChecker : MonoBehaviour
     private void Update()
     {
         Vector2 origin = (Vector2)transform.position + boxOffset;
-        IsGrounded = Physics2D.OverlapBox(origin, boxSize, 0f, groundLayer);
+        IsGrounded = Physics2D.OverlapBox(origin, boxSize, 0f, groundLayer) || Physics2D.OverlapBox(origin, boxSize, 0f, TruegroundLayer);
         anim?.SetBool("isGrounded", IsGrounded);   
         Debug.DrawLine(origin + new Vector2(-boxSize.x / 2, 0), origin + new Vector2(boxSize.x / 2, 0), IsGrounded ? Color.green : Color.red);
         Debug.DrawLine(origin + new Vector2(-boxSize.x / 2, -boxSize.y), origin + new Vector2(boxSize.x / 2, -boxSize.y), IsGrounded ? Color.green : Color.red);
