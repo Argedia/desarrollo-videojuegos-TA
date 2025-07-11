@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Platform1
   m_EditorClassIdentifier: 
   pieceName: PlataformaPrincipal
-  size: {x: 3, y: 1}
-  cost: 3
+  size: {x: 9, y: 1}
+  cost: 5
   prefab: {fileID: 1911851750823534756, guid: 8dc950fa115504d47a1d9c73242f5802, type: 3}
   maxEnemies: 5

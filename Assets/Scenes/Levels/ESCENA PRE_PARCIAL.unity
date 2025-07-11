@@ -153,7 +153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8625258161217851322, guid: c9a2579b4d3d8b916902900ae275071a, type: 3}
       propertyPath: jumpForce
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8943475144606999463, guid: c9a2579b4d3d8b916902900ae275071a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5300,6 +5300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1551434216}
   - component: {fileID: 1551434215}
+  - component: {fileID: 1551434217}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -5387,6 +5388,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1551434217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551434214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1001 &1812082063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5632,12 +5656,10 @@ MonoBehaviour:
   platformLibrary:
   - {fileID: 11400000, guid: 89f0044a1a6b19935949e9ddf401bda9, type: 2}
   - {fileID: 11400000, guid: a374ba91bed84373e946b5ff713c3af0, type: 2}
-  gridWidth: 4
-  gridHeight: 10
-  cellWidth: 0
-  cellHeight: 0
-  totalWidth: 18
-  totalHeight: 10
+  gridWidth: 18
+  gridHeight: 3
+  cellWidth: 1
+  cellHeight: 2
 --- !u!114 &2026100793
 MonoBehaviour:
   m_ObjectHideFlags: 0
