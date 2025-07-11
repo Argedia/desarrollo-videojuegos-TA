@@ -54,6 +54,8 @@ public class PlatformManagerLegacy : MonoBehaviour
             case 1:
                 EnablePlatform(6);
                 EnablePlatform(7);
+                EnablePlatform(1);
+
 
                 DisablePlatform(0);
                 break;
