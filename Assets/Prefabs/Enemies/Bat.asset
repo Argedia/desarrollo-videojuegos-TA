@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Bat
   m_EditorClassIdentifier: 
   enemyName: Bat
-  cost: 2
-  prefab: {fileID: 3737449156544949785, guid: 25c48504fcfd1784fb587fa861cf2b8e, type: 3}
+  cost: 4
+  prefab: {fileID: 7082956748092741024, guid: c3c54875e844f18438f179703892321a, type: 3}
   requiresPlatform: 0

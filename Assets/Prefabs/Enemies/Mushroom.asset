@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33008e5095ac4d875b9d13fb029bcd61, type: 3}
-  m_Name: Goblin
+  m_Name: Mushroom
   m_EditorClassIdentifier: 
-  enemyName: Goblin
-  cost: 2
-  prefab: {fileID: 5090665270499083688, guid: 496850e8363e0d05d87d8595c244fb5f, type: 3}
+  enemyName: Hongo
+  cost: 5
+  prefab: {fileID: 2631207632166998039, guid: 2995932f6dbf55a4dba7b95b73abe237, type: 3}
   requiresPlatform: 1

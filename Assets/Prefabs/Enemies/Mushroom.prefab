@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4b19b5af0f7732ab8a60a14094af25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 2
+  jumpForce: 6
   jumpCooldown: 2
   useGroundDetection: 1
   groundLayerMask:
