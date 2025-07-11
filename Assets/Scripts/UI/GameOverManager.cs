@@ -37,7 +37,6 @@ public class GameOverManager : MonoBehaviour
         // Configuramos todos los botones con sus sonidos correspondientes
         ConfigurarBotonesConAudio();
 
-        // Importante: El panel de pausa debe estar oculto al iniciar
         GameOverPanel.SetActive(false);
         
         // Nos suscribimos al evento de muerte del jugador
