@@ -18,7 +18,7 @@ public class GoDown : MonoBehaviour
     {
         if (flag)
         {
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
                 Debug.Log("COlISIONNN");
                 //Debug.Log("GAAAAAAAA");
