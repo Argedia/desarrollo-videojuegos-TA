@@ -665,8 +665,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b642592842dee58408a5f8a40f03aa95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicaMenu: {fileID: 8300000, guid: bccaa41caba193a48aa9ffbc6559a1da, type: 3}
-  musicaJuego: {fileID: 8300000, guid: bf711f8e99ce7ef4d9c8fa5f400b8847, type: 3}
+  musicaMenu: {fileID: 8300000, guid: bf711f8e99ce7ef4d9c8fa5f400b8847, type: 3}
+  musicaJuego: {fileID: 8300000, guid: bccaa41caba193a48aa9ffbc6559a1da, type: 3}
   sonidoClickBoton: {fileID: 8300000, guid: f6f04ee7f92c8ae4da0bb6243fd2ad19, type: 3}
   sonidoHoverBoton: {fileID: 0}
   sonidoSlider: {fileID: 0}
