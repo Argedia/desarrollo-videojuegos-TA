@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public enum WaveState
@@ -16,7 +18,6 @@ public class WaveManager : MonoBehaviour
 {
     public PlatformManager platformManager;
     public EnemyManager enemyManager;
-
     public float waveTime = 30f;
     public float restTime = 5f;
 
@@ -29,6 +30,31 @@ public class WaveManager : MonoBehaviour
     public static event Action<int> OnRestStarted;
     public static event Action OnWaveFailed;
     public static event Action OnAllWavesCompleted;
+
+    [SerializeField] private GameObject cardPickupPrefab; // Prefab con CardPickup y SpriteRenderer
+    [SerializeField] private List<CardData> allAvailableCards; // Todas tus cartas posibles
+
+    private void SpawnCardChoices()
+    {
+        var options = allAvailableCards.OrderBy(x => UnityEngine.Random.value).Take(2).ToList();
+
+        Vector3 camCenter = Camera.main.ViewportToWorldPoint(new Vector3(0.5f, 0.3f, 0)); // 30% desde abajo
+        camCenter.z = 0f;
+
+        Vector2 posLeft = camCenter + new Vector3(-1.5f, -1f, 0f);
+        Vector2 posRight = camCenter + new Vector3(1.5f, -1f, 0f);
+
+        SpawnCardPickup(options[0], posLeft);
+        SpawnCardPickup(options[1], posRight);
+    }
+
+    private void SpawnCardPickup(CardData card, Vector2 position)
+    {
+        GameObject go = Instantiate(cardPickupPrefab, position, Quaternion.identity);
+        var pickup = go.GetComponent<CardPickup>();
+        pickup.cardData = card;
+        go.GetComponent<SpriteRenderer>().sprite = card.icon;
+    }
 
     private void Start()
     {
@@ -64,6 +90,7 @@ public class WaveManager : MonoBehaviour
                     OnWaveCompleted?.Invoke(CurrentWave);
                     OnRestStarted?.Invoke(CurrentWave);
 
+                    SpawnCardChoices();
                     yield return new WaitForSeconds(restTime);
                     CurrentWave++;
                     Debug.Log("Avanzando a la siguiente oleada...");

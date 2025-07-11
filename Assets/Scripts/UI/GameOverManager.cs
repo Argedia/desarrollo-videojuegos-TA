@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -111,10 +112,15 @@ public class GameOverManager : MonoBehaviour
         
         isOver = true;
         Debug.Log("GameOverManager: ¡Mostrando Game Over!");
-        
+
         // PAUSAR TODO EL JUEGO COMPLETAMENTE
+
+        StartCoroutine(EsperarYPausar(2.5f));
+    }
+    IEnumerator EsperarYPausar(float time)
+    {
+        yield return new WaitForSeconds(time);
         PausarTodoElJuego();
-        
         // Activar el panel de Game Over
         if (GameOverPanel != null)
         {
@@ -124,18 +130,17 @@ public class GameOverManager : MonoBehaviour
         {
             Debug.LogError("GameOverManager: GameOverPanel no está asignado!");
         }
-        
+
         // Reproducir sonido de Game Over si está disponible
         if (audioManager != null)
         {
             // Aquí puedes agregar un sonido específico de Game Over
             // audioManager.SonidoGameOver();
         }
-        
+
         // Reproducir el audio específico de Game Over
         ReproducirAudioGameOver();
     }
-
     void ConfigurarBotonesConAudio()
     {
         // Configuramos cada botón con su funcionalidad y sonidos

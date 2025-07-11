@@ -1930,7 +1930,7 @@ MonoBehaviour:
   botonIniciar: {fileID: 197880510}
   botonSalir: {fileID: 206736918}
   sliderVolumen: {fileID: 1860396149}
-  nombreEscenaJuego: ESCENA PRE_PARCIAL
+  nombreEscenaJuego: ESCENA PRE_PARCIAL 1
 --- !u!1 &1959496169
 GameObject:
   m_ObjectHideFlags: 0

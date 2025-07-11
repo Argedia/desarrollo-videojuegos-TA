@@ -8,8 +8,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI Testing.unity
     guid: 5927f4909c57faf41b7fa14851a02aa4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Levels/ESCENA PRE_PARCIAL.unity
     guid: 118483fbaafc3ab16aa06e5966675b33
+  - enabled: 1
+    path: Assets/Scenes/Levels/ESCENA PRE_PARCIAL 1.unity
+    guid: 911a45f67a206a143a933d385821ad43
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
