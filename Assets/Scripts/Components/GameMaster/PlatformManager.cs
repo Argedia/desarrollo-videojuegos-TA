@@ -14,6 +14,7 @@ public class PlatformManager : MonoBehaviour
     public float totalWidth = 30f;   // ancho del área total donde irá el grid
     public float totalHeight = 15f;  // alto del área total
 
+    private List<GameObject> generatedPlatforms = new List<GameObject>();
     private void Awake()
     {
         cellWidth = totalWidth / gridWidth;
@@ -22,8 +23,12 @@ public class PlatformManager : MonoBehaviour
 
     public void GeneratePlatforms(int points, int requiredEnemySlots)
     {
+        foreach (GameObject platform in generatedPlatforms) { 
+            Destroy(platform);
+        }
         grid = new bool[gridWidth, gridHeight];
         spawnedPlatforms = new List<PlatformInstance>();
+        generatedPlatforms = new List<GameObject>();
         int currentSlots = 0;
         int attempts = 0;
 
@@ -88,6 +93,7 @@ public class PlatformManager : MonoBehaviour
         };
 
         spawnedPlatforms.Add(platform);
+        generatedPlatforms.Add(instance);
     }
 
     private Vector3 GridToWorld(Vector2Int gridPos, Vector2Int size)
