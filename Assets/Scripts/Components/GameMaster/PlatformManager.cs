@@ -17,12 +17,8 @@ public class PlatformManager : MonoBehaviour
 
     public void GeneratePlatforms(int points, int requiredEnemySlots)
     {
-        foreach (GameObject platform in generatedPlatforms) { 
-            Destroy(platform);
-        }
         grid = new bool[gridWidth, gridHeight];
         spawnedPlatforms = new List<PlatformInstance>();
-        generatedPlatforms = new List<GameObject>();
         int currentSlots = 0;
         int attempts = 0;
 
@@ -88,7 +84,6 @@ public class PlatformManager : MonoBehaviour
         };
 
         spawnedPlatforms.Add(platform);
-        generatedPlatforms.Add(instance);
     }
 
     private Vector3 GridToWorld(Vector2Int gridPos, Vector2Int size)
@@ -174,7 +169,8 @@ public class PlatformManager : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        if (grid == null) {
+        if (grid == null)
+        {
             for (int x = 0; x < gridWidth; x++)
             {
                 for (int y = 0; y < gridHeight; y++)
@@ -184,7 +180,7 @@ public class PlatformManager : MonoBehaviour
                 }
             }
         }
-        
+
         else
         {
             for (int x = 0; x < gridWidth; x++)

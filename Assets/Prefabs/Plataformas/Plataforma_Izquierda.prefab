@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1674498807212649687}
   - component: {fileID: 5766738484320173055}
   - component: {fileID: 7612774007638644567}
+  - component: {fileID: 7554095721758092646}
   m_Layer: 3
   m_Name: Plataforma_Izquierda
   m_TagString: Ground
@@ -154,3 +155,15 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &7554095721758092646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446101436335497937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d525b87597d4b7a4ab59cf9fc3aaa5ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

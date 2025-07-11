@@ -126,7 +126,7 @@ public class WaveManager : MonoBehaviour
             }
 
             // Aquí puedes agregar una condición para terminar el juego
-            if (CurrentWave > 10)
+            if (CurrentWave > 20)
             {
                 State = WaveState.Completed;
                 OnAllWavesCompleted?.Invoke();

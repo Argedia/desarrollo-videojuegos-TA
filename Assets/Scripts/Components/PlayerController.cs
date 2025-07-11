@@ -12,10 +12,15 @@
         public HandManager handManager;
         public EnergyManager energyManager;
         private bool inputEnabled = true;
-    private int currentEnergy;
-        private void Awake()
+        private int currentEnergy;
+        [SerializeField] private float detectionDistance = 1f;
+        [SerializeField] private LayerMask platformLayer;
+
+        private BoxCollider2D playerCollider;
+    private void Awake()
         {
-            horizontalMovement = GetComponent<UniformHorizontalMovement>();
+        playerCollider = GetComponent<BoxCollider2D>();
+        horizontalMovement = GetComponent<UniformHorizontalMovement>();
             uniformJump = GetComponent<UniformJump>();
         energyManager = GetComponent<EnergyManager>();
             if (handManager == null)
@@ -33,7 +38,12 @@
                     Flip();
                 }
             };
-            controls.Player.Move.canceled += ctx =>
+            controls.Player.DropDown.performed += ctx =>
+            {
+                if (!inputEnabled) return;
+                TryPassThroughPlatform();
+            };
+        controls.Player.Move.canceled += ctx =>
             {
                 if (!inputEnabled) return;
                 horizontalMovement.Move(0f);
@@ -98,4 +108,21 @@
         {
             inputEnabled = true;
         }
-    }
+
+        private void TryPassThroughPlatform()
+        {
+            Vector2 origin = transform.position;
+            Vector2 size = playerCollider.size;
+
+            RaycastHit2D hit = Physics2D.BoxCast(origin, size, 0f, Vector2.down, detectionDistance, platformLayer);
+
+            if (hit.collider != null)
+            {
+                PlatformPassThrough platform = hit.collider.GetComponent<PlatformPassThrough>();
+                if (platform != null)
+                {
+                    platform.IgnorePlayerTemporarily(playerCollider);
+                }
+            }
+        }
+}

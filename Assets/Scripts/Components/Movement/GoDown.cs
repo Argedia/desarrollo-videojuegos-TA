@@ -58,7 +58,7 @@ public class GoDown : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D suelo)
     {
-        if (suelo.gameObject.name == "Suelo")
+        if (suelo.gameObject.layer == LayerMask.NameToLayer("Platform"))
         {
             var boxCol = gameObject.GetComponent<BoxCollider2D>();
             boxCol.isTrigger = false;
