@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1071183339808460206}
   - component: {fileID: 4526857386062861675}
   - component: {fileID: 9179408205192983791}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,9 +109,10 @@ GameObject:
   - component: {fileID: 5091272634535489027}
   - component: {fileID: 4885386317129009439}
   - component: {fileID: 8179819206415736776}
-  m_Layer: 0
+  - component: {fileID: 5865058243634447529}
+  m_Layer: 7
   m_Name: Bat
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -387,6 +388,7 @@ MonoBehaviour:
       m_Calls: []
   animator: {fileID: 0}
   timeToDestroy: 2
+  maxBlood: 20
 --- !u!114 &8179819206415736776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,3 +402,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invulnerabilityDuration: 1
+--- !u!114 &5865058243634447529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3737449156544949785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25b2d491ea37ea2eeb4e3e77d950510c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
