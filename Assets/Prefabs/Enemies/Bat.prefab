@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3384013901646696278}
   m_Layer: 7
   m_Name: HitBox
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,8 +67,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.06018562, y: -0.23297815}
-  m_Radius: 0.35173154
+  m_Offset: {x: -0.04263413, y: -0.23788258}
+  m_Radius: 0.28591436
 --- !u!114 &3384013901646696278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,8 +271,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.16128492
+  m_Offset: {x: 0.05002084, y: 0}
+  m_Radius: 0.21130577
 --- !u!114 &1536865194293481350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,6 +330,8 @@ MonoBehaviour:
   waveAmplitude: 2
   waveFrequency: 1
   patrolRadius: 4
+  maxDistanceFromPlayer: 6
+  playerTrackingStrength: 0.3
   diveChance: 0.3
   diveCooldown: 3
   diveDetectionRange: 8
