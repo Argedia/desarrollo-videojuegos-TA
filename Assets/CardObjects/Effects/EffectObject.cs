@@ -18,19 +18,15 @@ public class EffectObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform == caster) return;
-
         foreach (var effect in effects)
         {
             effect.ApplyTo(other.gameObject);
         }
-
-        Destroy(gameObject);
     }
 
     private void Start()
     {
         // Seguridad para autodestruir si no colisiona en cierto tiempo
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 10f);
     }
 }

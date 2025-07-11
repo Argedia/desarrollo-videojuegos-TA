@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BurnEffect : MonoBehaviour, IEffect
 {
@@ -8,6 +8,8 @@ public class BurnEffect : MonoBehaviour, IEffect
 
     public void ApplyTo(GameObject target)
     {
+        if (target.layer == LayerMask.NameToLayer("Player"))
+            return;
         var runner = target.GetComponent<MonoBehaviour>();
         if (runner != null)
             runner.StartCoroutine(Burn(target));
@@ -16,6 +18,12 @@ public class BurnEffect : MonoBehaviour, IEffect
     private System.Collections.IEnumerator Burn(GameObject target)
     {
         var health = target.GetComponent<Health>();
+        var sprite = target.GetComponent<SpriteRenderer>();
+        Color originalColor = sprite != null ? sprite.color : Color.white;
+
+        if (sprite != null)
+            sprite.color = Color.red;
+
         float elapsed = 0f;
         while (elapsed < duration)
         {
@@ -23,5 +31,8 @@ public class BurnEffect : MonoBehaviour, IEffect
             yield return new WaitForSeconds(tickInterval);
             elapsed += tickInterval;
         }
+
+        if (sprite != null)
+            sprite.color = originalColor;
     }
 }

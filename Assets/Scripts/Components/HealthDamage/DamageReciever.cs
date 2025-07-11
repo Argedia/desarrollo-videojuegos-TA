@@ -8,6 +8,7 @@ public class DamageReceiver : MonoBehaviour
     private TemporaryInvulnerability tempInvulnerability;
     private Animator animator;
     private IController controller;
+    private bool shieldActive = false;
 
     [SerializeField]
     private float invulnerabilityDuration = 1f; // Customize per entity in Inspector
@@ -27,6 +28,13 @@ public class DamageReceiver : MonoBehaviour
     {
         if (health.IsDead) return;
         if (tempInvulnerability != null && tempInvulnerability.IsActive) return;
+
+        if (shieldActive)
+        {
+            shieldActive = false;
+            Debug.Log("🛡 Daño bloqueado por escudo.");
+            return;
+        }
 
         bool damaged = health.TakeDamage(damage);
         if (damaged)
@@ -49,6 +57,11 @@ public class DamageReceiver : MonoBehaviour
         yield return new WaitForSeconds(delay);
         //controller.EnableInput();
     }
+    public void ApplyShield()
+    {
+        shieldActive = true;
+    }
+    public bool ShieldIsActive => shieldActive;
 
 }
 

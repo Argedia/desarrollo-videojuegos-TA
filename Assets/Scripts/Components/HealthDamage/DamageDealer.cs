@@ -12,6 +12,8 @@ public class DamageDealer : MonoBehaviour
     [SerializeField] private float knockbackForce = 10f;
     [SerializeField] private float hitCooldown = 0.5f;
     [SerializeField] private LayerMask damageableLayers;
+    private int stackedBonusDamage = 0;
+    private bool applyBonusOnce = false;
 
     private Collider2D col;
     private ContactFilter2D filter;
@@ -39,11 +41,15 @@ public class DamageDealer : MonoBehaviour
         }
     }
 
+
     /// <summary>
     /// Llamar manualmente desde la animación (modo Manual).
     /// </summary>
     public void TryDealDamage()
     {
+        int totalDamage = damageAmount + ConsumeBonusDamage();
+
+
         results.Clear();
         col.Overlap(filter, results);
 
@@ -63,8 +69,22 @@ public class DamageDealer : MonoBehaviour
             if (receiver != null)
             {
                 Vector2 hitOrigin = transform.position;
-                receiver.ReceiveDamage(damageAmount, hitOrigin, knockbackForce);
+                receiver.ReceiveDamage(totalDamage, hitOrigin, knockbackForce);
             }
         }
+    }
+
+    public int ConsumeBonusDamage()
+    {
+        int bonus = stackedBonusDamage;
+        stackedBonusDamage = 0;
+        return bonus;
+    }
+
+    public int GetBonusDamage() => stackedBonusDamage;
+
+    public void AddBonusDamage(int amount)
+    {
+        stackedBonusDamage += amount;
     }
 }

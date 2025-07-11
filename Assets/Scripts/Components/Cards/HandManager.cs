@@ -59,6 +59,7 @@ public class HandManager : MonoBehaviour
         CardData cardData = card.GetData();
         if (cardData.CanPlayCard(currentEnergy))
         {
+            currentEnergy-=cardData.energyCost;
             cardData.Activate(caster);
             deckManager.Discard(card.GetData());
             // Marca la carta como eliminada en el arreglo.

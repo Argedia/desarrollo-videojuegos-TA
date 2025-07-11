@@ -37,20 +37,15 @@ public class CardData : ScriptableObject
             return;
         }
 
-        Vector2 spawnPosition = (Vector2)caster.position + relativeSpawnPosition;
+        // Dirección horizontal: +1 si mira derecha, -1 si mira izquierda
+        float direction = Mathf.Sign(caster.localScale.x);
+
+        // Aplica la dirección a la posición relativa
+        Vector2 spawnPosition = (Vector2)caster.position + new Vector2(relativeSpawnPosition.x * direction, relativeSpawnPosition.y);
 
         GameObject go = Instantiate(effectObjectPrefab, spawnPosition, Quaternion.identity);
 
         var obj = go.GetComponent<EffectObject>();
         obj.Setup(caster);
-        // var effectObject = go.GetComponent<EffectObject>();
-        // if (effectObject != null)
-        // {
-        //     effectObject.Activate(caster);
-        // }
-        // else
-        // {
-        //     Debug.LogWarning($"El prefab '{effectObjectPrefab.name}' no tiene un componente EffectObject.");
-        // }
     }
 }

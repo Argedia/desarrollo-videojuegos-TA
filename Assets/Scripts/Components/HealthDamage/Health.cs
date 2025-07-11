@@ -153,6 +153,7 @@ public class Health : MonoBehaviour
     {
         if (spriteRenderer != null)
             spriteRenderer.color = Color.white;
+            spriteRenderer.color = Color.white;
     }
 
     
