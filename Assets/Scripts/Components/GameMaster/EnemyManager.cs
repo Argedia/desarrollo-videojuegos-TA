@@ -6,7 +6,6 @@ public class EnemyManager : MonoBehaviour
 {
     public List<EnemyType> enemyLibrary;
     public Transform enemyParent;
-    private int enemiesAlive;
 
     private List<EnemyType> plannedEnemies = new();
 
@@ -40,13 +39,15 @@ public class EnemyManager : MonoBehaviour
     // Paso 2: instanciar enemigos ya planeados
     public void SpawnEnemies(List<PlatformInstance> platforms)
     {
+        Debug.Log($"EnemyManager: Spawning {plannedEnemies.Count} enemies");
+        
         foreach (var enemy in plannedEnemies)
         {
             if (!enemy.requiresPlatform)
             {
                 Vector3 pos = GetFreeAirPosition(); // define esto tú
-                Instantiate(enemy.prefab, pos, Quaternion.identity, enemyParent);
-                enemiesAlive++;
+                GameObject spawnedEnemy = Instantiate(enemy.prefab, pos, Quaternion.identity, enemyParent);
+                Debug.Log($"EnemyManager: Spawned flying enemy {enemy.name} at {pos}");
                 continue;
             }
 
@@ -54,19 +55,56 @@ public class EnemyManager : MonoBehaviour
             if (plat != null)
             {
                 Vector3 spawnPos = plat.GetRandomSpawnPos();
-                Instantiate(enemy.prefab, spawnPos, Quaternion.identity, enemyParent);
+                GameObject spawnedEnemy = Instantiate(enemy.prefab, spawnPos, Quaternion.identity, enemyParent);
                 plat.remainingSpawns--;
-                enemiesAlive++;
+                Debug.Log($"EnemyManager: Spawned ground enemy {enemy.name} at {spawnPos}");
             }
             else
             {
                 Debug.LogWarning("No hay suficiente suelo para todos los enemigos.");
             }
         }
+        
+        Debug.Log($"EnemyManager: Total alive enemies after spawn: {GetAliveEnemyCount()}");
     }
 
-    public void OnEnemyDeath() => enemiesAlive--;
-    public bool AllEnemiesDefeated() => enemiesAlive <= 0;
+    // Método para compatibilidad - ya no necesario pero mantenido por si se usa en otros lugares
+    public void OnEnemyDeath() 
+    {
+        Debug.Log($"EnemyManager: Enemy death reported. Alive enemies: {GetAliveEnemyCount()}");
+    }
+    
+    // Nueva implementación robusta basada en Health.IsDead
+    public bool AllEnemiesDefeated() 
+    {
+        int aliveCount = GetAliveEnemyCount();
+        Debug.Log($"EnemyManager: AllEnemiesDefeated check - Alive enemies: {aliveCount}");
+        return aliveCount <= 0;
+    }
+    
+    // Método auxiliar para contar enemigos vivos usando Health.IsDead
+    private int GetAliveEnemyCount()
+    {
+        int count = 0;
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        
+        foreach (GameObject enemy in enemies)
+        {
+            Health healthComponent = enemy.GetComponent<Health>();
+            if (healthComponent != null && !healthComponent.IsDead)
+            {
+                count++;
+            }
+            else if (healthComponent == null)
+            {
+                // Si no tiene componente Health, asumimos que está vivo
+                Debug.LogWarning($"Enemy {enemy.name} doesn't have Health component!");
+                count++;
+            }
+        }
+        
+        return count;
+    }
 
     private Vector3 GetFreeAirPosition()
 {

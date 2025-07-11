@@ -14,10 +14,6 @@ public enum WaveState
 
 public class WaveManager : MonoBehaviour
 {
-    public void Awake()
-    {
-        Start();
-    }
     public PlatformManager platformManager;
     public EnemyManager enemyManager;
 
@@ -44,7 +40,7 @@ public class WaveManager : MonoBehaviour
         while (true)
         {
             State = WaveState.Spawning;
-            
+
             int platformPoints = GetPlatformPoints(CurrentWave);
             Debug.Log("puntos plataforma:" + platformPoints);
             int enemyPoints = GetEnemyPoints(CurrentWave);
@@ -75,9 +71,24 @@ public class WaveManager : MonoBehaviour
 
                 if (timer <= 0f)
                 {
+                    Debug.Log("Game Over - Tiempo agotado");
+
+                    // Matar al jugador cuando se acabe el tiempo
+                    GameObject player = GameObject.FindGameObjectWithTag("Player");
+                    if (player != null)
+                    {
+                        // Opción 1: Si el jugador tiene un componente Health
+                        Health playerHealth = player.GetComponent<Health>();
+                        Debug.Log("Matando al jugador por tiempo agotado");
+                        playerHealth.TakeDamage(999); // Daño letal
+                    }
+                    else
+                    {
+                        Debug.LogWarning("No se encontró el Player con tag 'Player'");
+                    }
+
                     State = WaveState.Failed;
                     OnWaveFailed?.Invoke();
-                    Debug.Log("Game Over");
                     yield break;
                 }
 
